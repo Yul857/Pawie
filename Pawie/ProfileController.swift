@@ -15,19 +15,17 @@ class ProfileController: UICollectionViewController {
     
     //MARK: - properties
     
-    var user: User? {
-        didSet { collectionView.reloadData()}
-    }
+    private var user: User
 //    private var posts = [Post]()
     
-//    init(user: User){
-//        self.user = user
-//        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(user: User){
+        self.user = user
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -36,7 +34,6 @@ class ProfileController: UICollectionViewController {
         checkIfUserIsFollowed()
         fetchUserStats()
         fetchPosts()
-        fetchUser()
     }
     
     //MARK: - API
@@ -62,17 +59,12 @@ class ProfileController: UICollectionViewController {
 //            self.collectionView.reloadData()
 //        }
     }
-    func fetchUser() {
-        UserService.fetchUser { user in
-            self.user = user
-            self.navigationItem.title = user.userName
-        }
-    }
+
     
     //MARK: - Helpers
     
     func configureCollectionView() {
-        //navigationItem.title = "My pet UserName"
+        navigationItem.title = user.userName
         collectionView.backgroundColor = .white
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: cellidentifier)
         collectionView.register(ProfileHeader.self,
@@ -99,9 +91,7 @@ extension ProfileController {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifirer, for: indexPath) as! ProfileHeader
  //       header.delegate =  self
  //       header.viewModel = ProfileHeaderViewModel(user: user)
-        if let user = user{
-            header.viewModel = ProfileHeaderViewModel(user: user)
-        }
+        header.viewModel = ProfileHeaderViewModel(user: user)
         return header
     }
     
