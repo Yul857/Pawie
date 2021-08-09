@@ -53,7 +53,7 @@ class MainTabController: UITabBarController {
         let layout = UICollectionViewFlowLayout()
         let feed = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: layout))
                                                     
-        let search = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchController())
+        let search = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchTappedController())
         
         let image = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "plus_unselected"), selectedImage: #imageLiteral(resourceName: "plus_unselected"), rootViewController: ImageController())
         
@@ -92,6 +92,6 @@ class MainTabController: UITabBarController {
 extension MainTabController: AuthenticationDelegate{
     func authenticationDidComplete() {
         fetchUser()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
 }

@@ -35,6 +35,8 @@
 		FD6CAF6926C093E5008FF97A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6826C093E5008FF97A /* User.swift */; };
 		FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6B26C098C7008FF97A /* UserService.swift */; };
 		FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */; };
+		FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */; };
+		FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF9026C0C7E0008FF97A /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		FD6CAF6826C093E5008FF97A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FD6CAF6B26C098C7008FF97A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTappedController.swift; sourceTree = "<group>"; };
+		FD6CAF9026C0C7E0008FF97A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				FD6CAEF726BC6AD5008FF97A /* CustomTextField.swift */,
 				FD6CAF1126BDB658008FF97A /* FeedCell.swift */,
 				FD6CAF6626BF81E2008FF97A /* Profile View */,
+				FD6CAF9026C0C7E0008FF97A /* UserCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				FD6CAF0426BC7D8A008FF97A /* ImageSelectorController.swift */,
 				FD6CAF0726BC7DA2008FF97A /* ShopController.swift */,
 				FD6CAF0D26BC7DD3008FF97A /* ProfileController.swift */,
+				FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -346,8 +352,10 @@
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,
 				FD6CAEDB26BC681D008FF97A /* AppDelegate.swift in Sources */,
 				FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */,
+				FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */,
 				FD6CAF0E26BC7DD3008FF97A /* ProfileController.swift in Sources */,
 				FD6CAF1A26BDEB49008FF97A /* RegisterController.swift in Sources */,
+				FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */,
 				FD6CAF0B26BC7DBC008FF97A /* FeedController.swift in Sources */,
 				FD6CAF5826BEF602008FF97A /* ImageUploader.swift in Sources */,
 				FD6CAF5B26BEFAD1008FF97A /* AuthService.swift in Sources */,

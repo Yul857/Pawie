@@ -124,8 +124,8 @@ class ProfileHeader: UICollectionReusableView {
         
         addSubview(profileImageView)
         profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 16, paddingLeft: 12)
-        profileImageView.setDimensions(height: 80, width: 80)
-        profileImageView.layer.cornerRadius = 80/2
+        profileImageView.setDimensions(height: 100, width: 100)
+        profileImageView.layer.cornerRadius = 100/2
         
         addSubview(nameLabel)
         nameLabel.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 12, width: 150)

@@ -77,8 +77,9 @@ class LoginController: UIViewController {
     //MARK: - Actions
     
     @objc func handleShowSignUp(){
-        navigationController?.pushViewController(RegisterController(), animated: true)
-//        show(RegisterController(), sender: self)
+        let controller = RegisterController()
+        controller.delegate = delegate
+        navigationController?.pushViewController(controller, animated: true)
         print("Button tapped")
     }
     

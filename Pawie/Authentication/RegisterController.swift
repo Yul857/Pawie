@@ -10,7 +10,7 @@ import UIKit
 class RegisterController: UIViewController {
     //MARK: - Properties
     private var viewModel = RegistrationViewModel()
-
+    weak var delegate: AuthenticationDelegate?
     private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
@@ -71,7 +71,6 @@ class RegisterController: UIViewController {
     //MARK: - Action
     @objc func handleShowLogIn(){
         navigationController?.popViewController(animated: true)
-//        self.dismiss(animated: true, completion: nil)
         print("tapped log in")
     }
     
@@ -114,11 +113,12 @@ class RegisterController: UIViewController {
         AuthService.registerUser(withCredentials: credentials) { (error) in
             if let error = error{
                 print("DEBUG: Failed to register, \(error)")
-                return}
+                return
+                
+            }
+            self.delegate?.authenticationDidComplete()
         }
         
-        self.dismiss(animated: false, completion: nil)
-//        self.delegate?.authenticationDidComplete()
     }
     
     //MARK: - LifeCycle
