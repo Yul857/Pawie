@@ -12,15 +12,10 @@ import UIKit
 class UserCell: UITableViewCell {
     //MARK: Properties
     
-//    var viewModel: UserCellViewModel? {
-//        didSet{ configure()}
-//        }
-    var user: User? {
-        didSet {
-            usernamelabel.text = user?.userName
-            petnamelabel.text = user?.petname
+    var viewModel: UserCellViewModel? {
+        didSet{ configure()}
         }
-    }
+
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -75,10 +70,9 @@ class UserCell: UITableViewCell {
     //MARK: - Helpers
     
     func configure() {
-//        guard let viewModel = viewModel else {return}
-//
-//        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
-//        usernamelabel.text = viewModel.username
-//        fullnamelabel.text = viewModel.fullname
+        guard let viewModel = viewModel else {return}
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        usernamelabel.text = viewModel.username
+        petnamelabel.text = viewModel.petname
     }
 }

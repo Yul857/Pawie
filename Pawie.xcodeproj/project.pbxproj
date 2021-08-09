@@ -37,6 +37,7 @@
 		FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */; };
 		FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */; };
 		FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF9026C0C7E0008FF97A /* UserCell.swift */; };
+		FD6CAF9426C0D988008FF97A /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF9326C0D988008FF97A /* UserCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTappedController.swift; sourceTree = "<group>"; };
 		FD6CAF9026C0C7E0008FF97A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		FD6CAF9326C0D988008FF97A /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				FD6CAF1C26BE14B0008FF97A /* AuthenticationViewModel.swift */,
 				FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */,
+				FD6CAF9326C0D988008FF97A /* UserCellViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */,
 				FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */,
 				FD6CAF0E26BC7DD3008FF97A /* ProfileController.swift in Sources */,
+				FD6CAF9426C0D988008FF97A /* UserCellViewModel.swift in Sources */,
 				FD6CAF1A26BDEB49008FF97A /* RegisterController.swift in Sources */,
 				FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */,
 				FD6CAF0B26BC7DBC008FF97A /* FeedController.swift in Sources */,
