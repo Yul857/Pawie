@@ -13,5 +13,6 @@ pod 'Firebase/Messaging'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'IQKeyboardManagerSwift'
+pod 'SDWebImage', '~> 5.0'
 
 end

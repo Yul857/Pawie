@@ -35,9 +35,16 @@ class RegisterController: UIViewController {
         return tf
     }()
     
-    private let fullNameTextField: CustomTextField = CustomTextField(placeholder: "Fullname")
+    private let ownerNameTextField: CustomTextField = CustomTextField(placeholder: "Owner Name")
+    
+    private let petNameTextField: CustomTextField = CustomTextField(placeholder: "Pet Name")
     
     private let userNameTextField: CustomTextField = CustomTextField(placeholder: "Username")
+    
+    private let bioTextField: CustomTextField = {
+        let tf = CustomTextField(placeholder: "Please describe your pet..")
+        return tf
+    }()
     
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
@@ -73,10 +80,14 @@ class RegisterController: UIViewController {
             viewModel.email = sender.text
         }else if sender == passwordTextfield{
             viewModel.password = sender.text
-        }else if sender == fullNameTextField{
-            viewModel.fullname = sender.text
-        }else{
+        }else if sender == ownerNameTextField{
+            viewModel.ownername = sender.text
+        }else if sender == petNameTextField{
+            viewModel.petname = sender.text
+        }else if sender == userNameTextField {
             viewModel.username = sender.text
+        }else{
+            viewModel.bio = sender.text
         }
 
         updateForm()
@@ -93,11 +104,13 @@ class RegisterController: UIViewController {
     @objc func handleSignUp(){
         guard let email = emailTextField.text else{return}
         guard let password = passwordTextfield.text else{return}
-        guard let fullname = fullNameTextField.text else{return}
+        guard let ownername = ownerNameTextField.text else{return}
+        guard let petname = petNameTextField.text else {return}
         guard let username = userNameTextField.text?.lowercased() else{return}
+        guard let bio = bioTextField.text else {return}
         guard let profileImage = self.profileImage else {return}
 
-        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
+        let credentials = AuthCredentials(email: email, password: password, ownername: ownername, petname: petname, username: username, bio: bio, profileImage: profileImage)
         AuthService.registerUser(withCredentials: credentials) { (error) in
             if let error = error{
                 print("DEBUG: Failed to register, \(error)")
@@ -127,7 +140,7 @@ class RegisterController: UIViewController {
         plusPhotoButton.setDimensions(height: 140, width: 140)
         plusPhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
-        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextfield, fullNameTextField, userNameTextField, signUpButton])
+        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextfield, ownerNameTextField, petNameTextField ,userNameTextField, bioTextField, signUpButton])
         stack.axis = .vertical
         stack.spacing = 20
         
@@ -144,8 +157,10 @@ class RegisterController: UIViewController {
     func configureNotificationObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextfield.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        ownerNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        petNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         userNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        bioTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 
 }

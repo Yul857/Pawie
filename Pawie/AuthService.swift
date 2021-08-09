@@ -11,8 +11,10 @@ import Firebase
 struct AuthCredentials {
     let email: String
     let password: String
-    let fullname: String
+    let ownername: String
+    let petname: String
     let username: String
+    let bio: String
     let profileImage: UIImage
 }
 
@@ -30,7 +32,8 @@ struct AuthService {
                 }
                 guard let uid = results?.user.uid else {return}
                 
-                let data: [String: Any] = ["email" : credentials.email, "fullname": credentials.fullname,
+                let data: [String: Any] = ["email" : credentials.email, "ownername": credentials.ownername,
+                                           "petname": credentials.petname, "bio": credentials.bio,
                                            "profileImageUrl": imageURL, "uid": uid, "username": credentials.username]
                 
                 COLLECTION_USERS.document(uid).setData(data, completion: completion)

@@ -15,7 +15,9 @@ class ProfileController: UICollectionViewController {
     
     //MARK: - properties
     
-//    private var user: User
+    var user: User? {
+        didSet { collectionView.reloadData()}
+    }
 //    private var posts = [Post]()
     
 //    init(user: User){
@@ -34,6 +36,7 @@ class ProfileController: UICollectionViewController {
         checkIfUserIsFollowed()
         fetchUserStats()
         fetchPosts()
+        fetchUser()
     }
     
     //MARK: - API
@@ -59,11 +62,17 @@ class ProfileController: UICollectionViewController {
 //            self.collectionView.reloadData()
 //        }
     }
+    func fetchUser() {
+        UserService.fetchUser { user in
+            self.user = user
+            self.navigationItem.title = user.userName
+        }
+    }
     
     //MARK: - Helpers
     
     func configureCollectionView() {
-        navigationItem.title = "My pet UserName"
+        //navigationItem.title = "My pet UserName"
         collectionView.backgroundColor = .white
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: cellidentifier)
         collectionView.register(ProfileHeader.self,
@@ -77,7 +86,7 @@ class ProfileController: UICollectionViewController {
 //MARK: - UICollectionViewDataSource
 extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 30
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,6 +99,9 @@ extension ProfileController {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifirer, for: indexPath) as! ProfileHeader
  //       header.delegate =  self
  //       header.viewModel = ProfileHeaderViewModel(user: user)
+        if let user = user{
+            header.viewModel = ProfileHeaderViewModel(user: user)
+        }
         return header
     }
     

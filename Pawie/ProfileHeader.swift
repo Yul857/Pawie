@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import SDWebImage
+import SDWebImage
 
 //protocol ProfileHeaderDelegate: class {
 //    func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User)
@@ -14,9 +14,9 @@ import UIKit
 
 class ProfileHeader: UICollectionReusableView {
     //MARK: - Properties
-//    var viewModel: ProfileHeaderViewModel? {
-//        didSet{ configure()}
-//    }
+    var viewModel: ProfileHeaderViewModel? {
+        didSet{ configure()}
+    }
     
 //    weak var delegate: ProfileHeaderDelegate?
     
@@ -189,10 +189,14 @@ class ProfileHeader: UICollectionReusableView {
     //MARK: - Helpers
     
     func configure(){
-//        guard let viewModel = viewModel else {return}
-//        print("DEBUG: did call configure Functions")
+        guard let viewModel = viewModel else {return}
+        print("DEBUG: did call configure Functions")
 //        
-//        nameLabel.text = viewModel.fullname
+        nameLabel.text = viewModel.petname
+        bioLabel.text = viewModel.bio
+        ownerLabel.text = "Owner: \(viewModel.ownername)"
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        
 //        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
 //        
 //        editProfileFollowButton.setTitle(viewModel.followButtonText, for: .normal)

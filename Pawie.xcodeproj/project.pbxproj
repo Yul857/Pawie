@@ -32,6 +32,9 @@
 		FD6CAF5E26BEFB8D008FF97A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF5D26BEFB8D008FF97A /* Constants.swift */; };
 		FD6CAF6126BF81C0008FF97A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6026BF81C0008FF97A /* ProfileCell.swift */; };
 		FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6326BF81D0008FF97A /* ProfileHeader.swift */; };
+		FD6CAF6926C093E5008FF97A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6826C093E5008FF97A /* User.swift */; };
+		FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6B26C098C7008FF97A /* UserService.swift */; };
+		FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		FD6CAF5D26BEFB8D008FF97A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FD6CAF6026BF81C0008FF97A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		FD6CAF6326BF81D0008FF97A /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		FD6CAF6826C093E5008FF97A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FD6CAF6B26C098C7008FF97A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 		FD6CAEEF26BC6889008FF97A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD6CAF6826C093E5008FF97A /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6CAF1C26BE14B0008FF97A /* AuthenticationViewModel.swift */,
+				FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			children = (
 				FD6CAF5726BEF602008FF97A /* ImageUploader.swift */,
 				FD6CAF5A26BEFAD1008FF97A /* AuthService.swift */,
+				FD6CAF6B26C098C7008FF97A /* UserService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -330,11 +339,13 @@
 				FD6CAF1626BDEB2F008FF97A /* LoginController.swift in Sources */,
 				FD6CAEFF26BC737E008FF97A /* MainTabController.swift in Sources */,
 				FD6CAF0226BC7D3E008FF97A /* SearchController.swift in Sources */,
+				FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */,
 				FD6CAF1D26BE14B0008FF97A /* AuthenticationViewModel.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,
 				FD6CAEDB26BC681D008FF97A /* AppDelegate.swift in Sources */,
+				FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */,
 				FD6CAF0E26BC7DD3008FF97A /* ProfileController.swift in Sources */,
 				FD6CAF1A26BDEB49008FF97A /* RegisterController.swift in Sources */,
 				FD6CAF0B26BC7DBC008FF97A /* FeedController.swift in Sources */,
@@ -344,6 +355,7 @@
 				FD6CAF0826BC7DA2008FF97A /* ShopController.swift in Sources */,
 				FD6CAEDD26BC681D008FF97A /* SceneDelegate.swift in Sources */,
 				FD6CAF5E26BEFB8D008FF97A /* Constants.swift in Sources */,
+				FD6CAF6926C093E5008FF97A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
