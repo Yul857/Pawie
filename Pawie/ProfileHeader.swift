@@ -8,9 +8,9 @@
 import UIKit
 import SDWebImage
 
-//protocol ProfileHeaderDelegate: class {
-//    func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User)
-//}
+protocol ProfileHeaderDelegate: class {
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User)
+}
 
 class ProfileHeader: UICollectionReusableView {
     //MARK: - Properties
@@ -18,7 +18,7 @@ class ProfileHeader: UICollectionReusableView {
         didSet{ configure()}
     }
     
-//    weak var delegate: ProfileHeaderDelegate?
+    weak var delegate: ProfileHeaderDelegate?
     
     private let profileImageView: UIImageView =  {
         let iv = UIImageView()
@@ -32,7 +32,6 @@ class ProfileHeader: UICollectionReusableView {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize:16)
-        label.text = "BOBO Siamese"
         label.numberOfLines = 0
         
         return label
@@ -41,7 +40,6 @@ class ProfileHeader: UICollectionReusableView {
     private let ownerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Owner: Lin Yu-Ming"
         
         return label
     }()
@@ -49,7 +47,6 @@ class ProfileHeader: UICollectionReusableView {
     private let bioLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "This is my cat BAll kldjfk lsajd hfklhsdi ovsdj knfjklhjfisd jfdjkh jhsiohduhfu sfklashuibasdjna sdnas jfhioa sdbbius  fosnndjnfasbfa"
         label.numberOfLines = 0
         
         return label
@@ -135,7 +132,7 @@ class ProfileHeader: UICollectionReusableView {
         ownerLabel.anchor(top: nameLabel.bottomAnchor, left: leftAnchor, paddingTop: 6, paddingLeft: 12, width: 150)
         
         addSubview(bioLabel)
-        bioLabel.anchor(top: ownerLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 6, paddingLeft: 12, paddingRight: 12, height: 80)
+        bioLabel.anchor(top: ownerLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 6, paddingLeft: 12, paddingRight: 12)
         
         
         
@@ -164,13 +161,13 @@ class ProfileHeader: UICollectionReusableView {
 //        buttonStack.distribution = .fillEqually
 //
 //
-//        addSubview(topDivider)
-//        addSubview(bottomDevider)
+ //       addSubview(topDivider)
+ //       addSubview(bottomDevider)
 //        addSubview(buttonStack)
 //
 //        buttonStack.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 50)
 //        topDivider.anchor(top: buttonStack.topAnchor, left: leftAnchor, right: rightAnchor, height: 0.5)
-//        bottomDevider.anchor(top: buttonStack.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 0.5 )
+//        bottomDevider.anchor(top: bioLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4, height: 0.5 )
         
         
     }
@@ -181,8 +178,8 @@ class ProfileHeader: UICollectionReusableView {
     
     //MARK: - Actions
     @objc func handleEditProfileFollowTapped() {
-//        guard let viewModel = viewModel else { return }
-//        delegate?.header(self, didTapActionButtonFor: viewModel.user)
+        guard let viewModel = viewModel else { return }
+        delegate?.header(self, didTapActionButtonFor: viewModel.user)
         
     }
     
@@ -190,22 +187,19 @@ class ProfileHeader: UICollectionReusableView {
     
     func configure(){
         guard let viewModel = viewModel else {return}
-        print("DEBUG: did call configure Functions")
-//        
+       
         nameLabel.text = viewModel.petname
         bioLabel.text = viewModel.bio
         ownerLabel.text = "Owner: \(viewModel.ownername)"
         profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+                
+        editProfileFollowButton.setTitle(viewModel.followButtonText, for: .normal)
+        editProfileFollowButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
+        editProfileFollowButton.backgroundColor = viewModel.followButtonBackgoundColor
         
-//        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
-//        
-//        editProfileFollowButton.setTitle(viewModel.followButtonText, for: .normal)
-//        editProfileFollowButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
-//        editProfileFollowButton.backgroundColor = viewModel.followButtonBackgoundColor
-//        
-//        postLabel.attributedText = viewModel.numberOfPosts
-//        followersLabel.attributedText = viewModel.numberOfFollowers
-//        followingLabel.attributedText = viewModel.numberOfFollowing
+        postLabel.attributedText = viewModel.numberOfPosts
+        followersLabel.attributedText = viewModel.numberOfFollowers
+        followingLabel.attributedText = viewModel.numberOfFollowing
     }
     
     func attributedStackText(value: Int, label: String) -> NSAttributedString{

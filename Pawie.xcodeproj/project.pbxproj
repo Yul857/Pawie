@@ -38,6 +38,9 @@
 		FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */; };
 		FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF9026C0C7E0008FF97A /* UserCell.swift */; };
 		FD6CAF9426C0D988008FF97A /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF9326C0D988008FF97A /* UserCellViewModel.swift */; };
+		FD6CAFB626C142BB008FF97A /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFB526C142BA008FF97A /* UploadPostController.swift */; };
+		FD6CAFB926C1FB9F008FF97A /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFB826C1FB9F008FF97A /* InputTextView.swift */; };
+		FD6CAFBC26C202A7008FF97A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFBB26C202A7008FF97A /* PostService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTappedController.swift; sourceTree = "<group>"; };
 		FD6CAF9026C0C7E0008FF97A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		FD6CAF9326C0D988008FF97A /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		FD6CAFB526C142BA008FF97A /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
+		FD6CAFB826C1FB9F008FF97A /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		FD6CAFBB26C202A7008FF97A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 				FD6CAF0726BC7DA2008FF97A /* ShopController.swift */,
 				FD6CAF0D26BC7DD3008FF97A /* ProfileController.swift */,
 				FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */,
+				FD6CAFB526C142BA008FF97A /* UploadPostController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +203,7 @@
 				FD6CAF5726BEF602008FF97A /* ImageUploader.swift */,
 				FD6CAF5A26BEFAD1008FF97A /* AuthService.swift */,
 				FD6CAF6B26C098C7008FF97A /* UserService.swift */,
+				FD6CAFBB26C202A7008FF97A /* PostService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			children = (
 				FD6CAEFB26BC6C74008FF97A /* Extension.swift */,
 				FD6CAF5D26BEFB8D008FF97A /* Constants.swift */,
+				FD6CAFB826C1FB9F008FF97A /* InputTextView.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -349,17 +358,20 @@
 				FD6CAEFF26BC737E008FF97A /* MainTabController.swift in Sources */,
 				FD6CAF0226BC7D3E008FF97A /* SearchController.swift in Sources */,
 				FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */,
+				FD6CAFB626C142BB008FF97A /* UploadPostController.swift in Sources */,
 				FD6CAF1D26BE14B0008FF97A /* AuthenticationViewModel.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,
 				FD6CAEDB26BC681D008FF97A /* AppDelegate.swift in Sources */,
 				FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */,
+				FD6CAFB926C1FB9F008FF97A /* InputTextView.swift in Sources */,
 				FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */,
 				FD6CAF0E26BC7DD3008FF97A /* ProfileController.swift in Sources */,
 				FD6CAF9426C0D988008FF97A /* UserCellViewModel.swift in Sources */,
 				FD6CAF1A26BDEB49008FF97A /* RegisterController.swift in Sources */,
 				FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */,
+				FD6CAFBC26C202A7008FF97A /* PostService.swift in Sources */,
 				FD6CAF0B26BC7DBC008FF97A /* FeedController.swift in Sources */,
 				FD6CAF5826BEF602008FF97A /* ImageUploader.swift in Sources */,
 				FD6CAF5B26BEFAD1008FF97A /* AuthService.swift in Sources */,

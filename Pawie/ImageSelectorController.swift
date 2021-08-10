@@ -22,7 +22,7 @@ class ImageController: UIViewController {
     //MARK: - Helpers
     
     func configure() {
-        view.backgroundColor = .systemPurple
+        view.backgroundColor = .white
     }
 }
 

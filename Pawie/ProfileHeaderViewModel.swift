@@ -27,30 +27,34 @@ struct ProfileHeaderViewModel {
         return user.bio
     }
     
-//    var followButtonText: String {
-//        if user.isCurrentUser {
-//            return "Edit Profile"
-//        }
-//
-//        return user.isFollowed ? "Following" : "Follow"
-//    }
-//
-//    var followButtonBackgoundColor: UIColor {
-//        return user.isCurrentUser ? .white : .systemBlue
-//    }
-//
-//    var followButtonTextColor: UIColor {
-//        return user.isCurrentUser ? .black : .white
-//    }
-//
-//    var numberOfFollowers: NSAttributedString {
-//        return attributedStackText(value: user.stats.followers, label: "followers")
-//    }
-//
-//    var numberOfFollowing: NSAttributedString {
-//        return attributedStackText(value: user.stats.following, label: "following")
-//    }
-//
+    var followButtonText: String {
+        if user.isCurrentUser {
+            return "Edit Profile"
+        }
+
+        return user.isFollowed ? "Following" : "Follow"
+    }
+
+    var followButtonBackgoundColor: UIColor {
+        return user.isCurrentUser ? .white : .systemBlue
+    }
+
+    var followButtonTextColor: UIColor {
+        return user.isCurrentUser ? .black : .white
+    }
+
+    var numberOfFollowers: NSAttributedString {
+        return attributedStackText(value: user.stats.followers, label: "followers")
+    }
+
+    var numberOfFollowing: NSAttributedString {
+        return attributedStackText(value: user.stats.following, label: "following")
+    }
+    
+    var numberOfPosts: NSAttributedString {
+        return attributedStackText(value: 5, label: "posts")
+    }
+
 //    var numberOfPosts: NSAttributedString {
 //        return attributedStackText(value: user.stats.posts, label: "posts")
 //    }

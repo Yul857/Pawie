@@ -20,7 +20,7 @@ struct User {
     
     var isFollowed = false
     
-    //var stats: UserStats!
+    var stats: UserStats!
     
     var isCurrentUser: Bool {return Auth.auth().currentUser?.uid == uid}
     
@@ -34,7 +34,14 @@ struct User {
         self.userName = dictionary["username"] as? String ?? ""
         self.uid = dictionary["uid"] as? String ?? ""
         
-        //self.stats = UserStats(followers: 0, following: 0, posts: 0)
+//        self.stats = UserStats(followers: 0, following: 0, posts: 0)
+        self.stats = UserStats(followers: 0, following: 0)
     }
     
+}
+
+struct UserStats {
+    let followers: Int
+    let following: Int
+//    let posts: Int
 }

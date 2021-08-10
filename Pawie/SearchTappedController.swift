@@ -24,6 +24,7 @@ class SearchTappedController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorColor = .clear
         configureSearchController()
         configureTableView()
         fetchUsers()
