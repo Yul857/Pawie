@@ -6,9 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol FeedCellDelegate: class {
+    func cell(_ cell: FeedCell, wantsToShowCommentsForPost: Post)
+//    func cell(_ cell: FeedCell, didLike post: Post)
+//    func cell(_ cell: FeedCell, wantsToShowProfileFor uid: String)
+}
+
 
 class FeedCell: UICollectionViewCell{
     //MARK: - LifeCycle
+    
+    var viewModel: PostViewModel? {
+        didSet { configure() }
+    }
+    weak var delegate: FeedCellDelegate?
     
     private lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -39,7 +52,6 @@ class FeedCell: UICollectionViewCell{
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
         iv.backgroundColor = .lightGray
-        iv.image = #imageLiteral(resourceName: "profile pic")
         return iv
     }()
     
@@ -69,7 +81,6 @@ class FeedCell: UICollectionViewCell{
     private let likeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.text = "3 likes"
         return label
     }()
     
@@ -83,7 +94,6 @@ class FeedCell: UICollectionViewCell{
     private let captionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Bobo is my baby"
         return label
     }()
     
@@ -117,18 +127,25 @@ class FeedCell: UICollectionViewCell{
         
         addSubview(likeButton)
         likeButton.anchor(top: postImageView.bottomAnchor, left: leftAnchor, paddingLeft: 8, height: 50)
-        
+
         addSubview(likeLabel)
         likeLabel.anchor(top: postImageView.bottomAnchor, left: likeButton.rightAnchor, paddingLeft: 8, height: 50)
-        
+
         addSubview(commentButton)
-        commentButton.anchor(top: postImageView.bottomAnchor, left: likeLabel.rightAnchor, paddingLeft: 65, height: 50)
-        
+        commentButton.anchor(top: postImageView.bottomAnchor, left: likeLabel.rightAnchor, paddingLeft: 55, height: 50)
+
         addSubview(commentLabel)
         commentLabel.anchor(top: postImageView.bottomAnchor, left: commentButton.rightAnchor, paddingLeft: 8, height: 50)
-        
+
         addSubview(shareButton)
         shareButton.anchor(top: postImageView.bottomAnchor, right: rightAnchor, paddingRight: 20, height: 50)
+       
+        
+//        let feedStack = UIStackView(arrangedSubviews: [likeStack, commentStack, shareButton])
+//        feedStack.distribution = .fillEqually
+//        feedStack.axis = .horizontal
+//        addSubview(feedStack)
+//        feedStack.anchor(top: postImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 50)
         
         let divider = UIView()
         divider.backgroundColor = .lightGray
@@ -151,6 +168,8 @@ class FeedCell: UICollectionViewCell{
     }
     
     @objc func didTapComment() {
+        guard let viewModel = viewModel else {return}
+        delegate?.cell(self, wantsToShowCommentsForPost: viewModel.post)
     }
     @objc func didTapLike() {
     }
@@ -158,6 +177,15 @@ class FeedCell: UICollectionViewCell{
     //MARK: - Helpers
     
     func configure() {
+        guard let viewModel = viewModel else {return}
+        captionLabel.text = viewModel.caption
+        postImageView.sd_setImage(with: viewModel.imageUrl)
+        profileImageView.sd_setImage(with: viewModel.userProfileImageUrl)
+        usernameButton.setTitle(viewModel.username, for: .normal)
+        
+        likeLabel.text = viewModel.likesLabelText
+//        likeButton.tintColor = viewModel.likeButtonTintColor
+//        likeButton.setImage(viewModel.likeButtonImage, for: .normal)
     }
 }
 

@@ -41,6 +41,10 @@
 		FD6CAFB626C142BB008FF97A /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFB526C142BA008FF97A /* UploadPostController.swift */; };
 		FD6CAFB926C1FB9F008FF97A /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFB826C1FB9F008FF97A /* InputTextView.swift */; };
 		FD6CAFBC26C202A7008FF97A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFBB26C202A7008FF97A /* PostService.swift */; };
+		FD6CAFE026C2179E008FF97A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFDF26C2179E008FF97A /* Post.swift */; };
+		FD6CAFE326C21D35008FF97A /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFE226C21D35008FF97A /* PostViewModel.swift */; };
+		FD6CAFE626C326AB008FF97A /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFE526C326AB008FF97A /* CommentController.swift */; };
+		FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFE826C329DA008FF97A /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		FD6CAFB526C142BA008FF97A /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		FD6CAFB826C1FB9F008FF97A /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		FD6CAFBB26C202A7008FF97A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		FD6CAFDF26C2179E008FF97A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FD6CAFE226C21D35008FF97A /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		FD6CAFE526C326AB008FF97A /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		FD6CAFE826C329DA008FF97A /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6CAF6826C093E5008FF97A /* User.swift */,
+				FD6CAFDF26C2179E008FF97A /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,10 +172,11 @@
 		FD6CAEF226BC68DD008FF97A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FD6CAF6626BF81E2008FF97A /* Profile View */,
 				FD6CAEF726BC6AD5008FF97A /* CustomTextField.swift */,
 				FD6CAF1126BDB658008FF97A /* FeedCell.swift */,
-				FD6CAF6626BF81E2008FF97A /* Profile View */,
 				FD6CAF9026C0C7E0008FF97A /* UserCell.swift */,
+				FD6CAFE826C329DA008FF97A /* CommentCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -177,6 +187,7 @@
 				FD6CAF1C26BE14B0008FF97A /* AuthenticationViewModel.swift */,
 				FD6CAF6E26C09FDE008FF97A /* ProfileHeaderViewModel.swift */,
 				FD6CAF9326C0D988008FF97A /* UserCellViewModel.swift */,
+				FD6CAFE226C21D35008FF97A /* PostViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				FD6CAF0D26BC7DD3008FF97A /* ProfileController.swift */,
 				FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */,
 				FD6CAFB526C142BA008FF97A /* UploadPostController.swift */,
+				FD6CAFE526C326AB008FF97A /* CommentController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -351,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6CAFE326C21D35008FF97A /* PostViewModel.swift in Sources */,
 				FD6CAF0526BC7D8A008FF97A /* ImageSelectorController.swift in Sources */,
 				FD6CAEFC26BC6C74008FF97A /* Extension.swift in Sources */,
 				FD6CAEF826BC6AD5008FF97A /* CustomTextField.swift in Sources */,
@@ -359,9 +372,12 @@
 				FD6CAF0226BC7D3E008FF97A /* SearchController.swift in Sources */,
 				FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */,
 				FD6CAFB626C142BB008FF97A /* UploadPostController.swift in Sources */,
+				FD6CAFE626C326AB008FF97A /* CommentController.swift in Sources */,
 				FD6CAF1D26BE14B0008FF97A /* AuthenticationViewModel.swift in Sources */,
+				FD6CAFE026C2179E008FF97A /* Post.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
+				FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */,
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,
 				FD6CAEDB26BC681D008FF97A /* AppDelegate.swift in Sources */,
 				FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */,

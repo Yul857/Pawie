@@ -16,7 +16,7 @@ class ProfileController: UICollectionViewController {
     //MARK: - properties
     
     private var user: User
-//    private var posts = [Post]()
+    private var posts = [Post]()
     
     init(user: User){
         self.user = user
@@ -53,11 +53,11 @@ class ProfileController: UICollectionViewController {
     }
     
     func fetchPosts(){
-//        PostService.fetchPosts(forUser: user.uid) { posts in
-//            self.posts = posts
-//            print("DEBUG: There are \(posts.count) posts")
-//            self.collectionView.reloadData()
-//        }
+        PostService.fetchPosts(forUser: user.uid) { posts in
+            self.posts = posts
+            print("DEBUG: Posts are \(posts)")
+            self.collectionView.reloadData()
+        }
     }
 
     
@@ -78,12 +78,12 @@ class ProfileController: UICollectionViewController {
 //MARK: - UICollectionViewDataSource
 extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return posts.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellidentifier, for: indexPath) as! ProfileCell
-//        cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        cell.viewModel = PostViewModel(post: posts[indexPath.row])
         return cell
     }
     
@@ -102,7 +102,7 @@ extension ProfileController {
 extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = FeedController(collectionViewLayout:  UICollectionViewFlowLayout())
- //       controller.post = posts[indexPath.row]
+        controller.post = posts[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
     }
 }

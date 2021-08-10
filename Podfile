@@ -15,5 +15,6 @@ pod 'Firebase/Database'
 pod 'IQKeyboardManagerSwift'
 pod 'SDWebImage', '~> 5.0'
 pod 'YPImagePicker'
+pod 'JGProgressHUD'
 
 end

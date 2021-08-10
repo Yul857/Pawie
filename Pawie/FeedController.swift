@@ -14,11 +14,15 @@ class FeedController: UICollectionViewController{
     private let reuseIdentifier = "feedCell"
     //MARK: - properties
     
+    private var posts = [Post]()
+    var post: Post?
+    
     
     //MARK: - LifyCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        fetchPosts()
     }
     //MARK: - Actions
     @objc func handleLogOut() {
@@ -35,16 +39,37 @@ class FeedController: UICollectionViewController{
         
     }
     
+    @objc func handleRefresh() {
+        posts.removeAll()
+        fetchPosts()
+    }
+    
+    //MARK: - API
+    func fetchPosts() {
+        guard post == nil else {return}
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.refreshControl?.endRefreshing()
+            self.collectionView.reloadData()
+        }
+    }
+    
     //MARK: - Helpers
     
     func configure() {
         collectionView.backgroundColor = .white
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out",
-                                                           style: .plain, target: self,
-                                                           action: #selector(handleLogOut))
+        if post == nil{
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out",
+                                                               style: .plain, target: self,
+                                                               action: #selector(handleLogOut))
+        }
         navigationItem.title = "PAWIE"
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refresher
     }
 }
 
@@ -52,11 +77,17 @@ class FeedController: UICollectionViewController{
 
 extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return post == nil ? posts.count : 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCell
+        cell.delegate = self
+        if let post = post {
+            cell.viewModel = PostViewModel(post: post)
+        }else{
+            cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        }
         return cell
     }
 }
@@ -73,4 +104,38 @@ extension FeedController: UICollectionViewDelegateFlowLayout{
         
         return CGSize(width: width, height: height)
     }
+}
+
+extension FeedController: FeedCellDelegate{
+//    func cell(_ cell: FeedCell, wantsToShowProfileFor uid: String) {
+//        UserService.fetchUser(withUid: uid) { user in
+//            let controller = ProfileController(user: user)
+//            self.navigationController?.pushViewController(controller, animated: true)
+//        }
+//    }
+    
+    func cell(_ cell: FeedCell, wantsToShowCommentsForPost post: Post) {
+        let controller = CommentController(post: post)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+//    
+//    func cell(_ cell: FeedCell, didLike post: Post) {
+//        
+//        //cell.viewModel?.post.didLike.toggle()
+//        if post.didLike {
+//            PostService.unlikePost(post: post) { _ in
+//                cell.likeButton.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
+//                cell.likeButton.tintColor = .black
+//                //cell.viewModel?.post.likes = post.likes - 1
+//            }
+//        }else{
+//            PostService.likePost(post: post) { _ in
+//                cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
+//                cell.likeButton.tintColor = .red
+//                //cell.viewModel?.post.likes = post.likes + 1
+//            }
+//        }
+//    }
+    
+    
 }

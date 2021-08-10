@@ -76,7 +76,6 @@ class MainTabController: UITabBarController {
                 guard let selectedImage = items.singlePhoto?.image else { return }
                 let controller = UploadPostController()
                 controller.selectedImage = selectedImage
-//                controller.delegate = self
                 controller.delegate = self
                 controller.currentuser = self.user
                 let nav = UINavigationController(rootViewController: controller)
@@ -124,6 +123,7 @@ extension MainTabController: UITabBarControllerDelegate {
             config.screens = [.library, .photo]
             config.hidesStatusBar = false
             config.library.maxNumberOfItems = 1
+            config.showsCrop = .rectangle(ratio: 1)
             
             let picker = YPImagePicker(configuration: config)
             picker.modalPresentationStyle = .fullScreen
@@ -141,9 +141,9 @@ extension MainTabController: UploadPostControllerDelegate{
         selectedIndex = 0
         controller.dismiss(animated: true, completion: nil)
         
-//        guard let feedNav = viewControllers?.first as? UINavigationController else {return}
-//        guard let feed = feedNav.viewControllers.first as? FeedController else {return}
-//       feed.handleRefresh()
+        guard let feedNav = viewControllers?.first as? UINavigationController else {return}
+        guard let feed = feedNav.viewControllers.first as? FeedController else {return}
+        feed.handleRefresh()
     }
     
     

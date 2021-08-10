@@ -63,10 +63,10 @@ class UploadPostController: UIViewController {
         guard let image = selectedImage else { return}
         guard let caption = captionTextView.text else { return }
         guard let user = currentuser else {return}
-//        showLoader(true)
-//
+        showLoader(true)
+
         PostService.uploadPost(caption: caption, image: image, user: user) { error in
-//            self.showLoader(false)
+            self.showLoader(false)
             if let error = error {
                 print("DEBUG: Failed to upload post \(error.localizedDescription)")
                 return
