@@ -10,9 +10,10 @@ import UIKit
 class CommentCell: UICollectionViewCell {
     //MARK: - properties
     
-//    var viewModel: CommentViewModel? {
-//        didSet {configure()}
-//    }
+    var viewModel: CommentViewModel? {
+        didSet {configure()}
+    }
+    
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -49,9 +50,9 @@ class CommentCell: UICollectionViewCell {
     //MARK: HELPERS
     
     func configure() {
-//        guard let viewModel = viewModel else {return}
-//        
-//        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
-//        commentLabel.attributedText = viewModel.commentLabelText()
+        guard let viewModel = viewModel else {return}
+        
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        commentLabel.attributedText = viewModel.commentLabelText()
     }
 }

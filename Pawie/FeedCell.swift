@@ -10,7 +10,7 @@ import SDWebImage
 
 protocol FeedCellDelegate: class {
     func cell(_ cell: FeedCell, wantsToShowCommentsForPost: Post)
-//    func cell(_ cell: FeedCell, didLike post: Post)
+    func cell(_ cell: FeedCell, didLike post: Post)
 //    func cell(_ cell: FeedCell, wantsToShowProfileFor uid: String)
 }
 
@@ -147,13 +147,13 @@ class FeedCell: UICollectionViewCell{
 //        addSubview(feedStack)
 //        feedStack.anchor(top: postImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 50)
         
-        let divider = UIView()
-        divider.backgroundColor = .lightGray
-        addSubview(divider )
-        divider.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 0.5)
+//        let divider = UIView()
+//        divider.backgroundColor = .lightGray
+//        addSubview(divider )
+//        divider.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 0.5)
         
         addSubview(captionLabel)
-        captionLabel.anchor(top: divider.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        captionLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
         
         addSubview(postTimeLabel)
         postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
@@ -172,6 +172,8 @@ class FeedCell: UICollectionViewCell{
         delegate?.cell(self, wantsToShowCommentsForPost: viewModel.post)
     }
     @objc func didTapLike() {
+        guard let viewModel = viewModel else {return}
+        delegate?.cell(self, didLike: viewModel.post)
     }
     
     //MARK: - Helpers
@@ -184,8 +186,8 @@ class FeedCell: UICollectionViewCell{
         usernameButton.setTitle(viewModel.username, for: .normal)
         
         likeLabel.text = viewModel.likesLabelText
-//        likeButton.tintColor = viewModel.likeButtonTintColor
-//        likeButton.setImage(viewModel.likeButtonImage, for: .normal)
+        likeButton.tintColor = viewModel.likeButtonTintColor
+        likeButton.setImage(viewModel.likeButtonImage, for: .normal)
     }
 }
 
