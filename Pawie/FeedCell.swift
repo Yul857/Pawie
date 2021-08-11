@@ -11,7 +11,7 @@ import SDWebImage
 protocol FeedCellDelegate: class {
     func cell(_ cell: FeedCell, wantsToShowCommentsForPost: Post)
     func cell(_ cell: FeedCell, didLike post: Post)
-//    func cell(_ cell: FeedCell, wantsToShowProfileFor uid: String)
+    func cell(_ cell: FeedCell, wantsToShowProfileFor uid: String)
 }
 
 
@@ -39,19 +39,23 @@ class FeedCell: UICollectionViewCell{
     private lazy var usernameButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.addTarget(self, action: #selector(showUserProfile), for: .touchUpInside)
         button.setTitle("bobo Siamese Cat", for: .normal)
         
         return button
     }()
     
-    private let postImageView: UIImageView = {
+    private lazy var postImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
         iv.backgroundColor = .lightGray
+        
+        let tab = UITapGestureRecognizer(target: self, action: #selector(showUserProfile))
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(tab)
         return iv
     }()
     
@@ -94,6 +98,8 @@ class FeedCell: UICollectionViewCell{
     private let captionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         return label
     }()
     
@@ -153,10 +159,10 @@ class FeedCell: UICollectionViewCell{
 //        divider.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 0.5)
         
         addSubview(captionLabel)
-        captionLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        captionLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingLeft: 8, paddingRight: 8)
         
         addSubview(postTimeLabel)
-        postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor, paddingTop: 6, paddingLeft: 8)
         
     }
     
@@ -165,6 +171,8 @@ class FeedCell: UICollectionViewCell{
     }
     
     @objc func showUserProfile(){
+        guard let viewModel = viewModel else {return}
+        delegate?.cell(self, wantsToShowProfileFor: viewModel.post.ownerUid)
     }
     
     @objc func didTapComment() {
