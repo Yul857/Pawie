@@ -54,6 +54,7 @@
 		FD6CAFFF26C3E1D2008FF97A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAFFE26C3E1D2008FF97A /* Notification.swift */; };
 		FD6CB00226C3E91A008FF97A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB00126C3E91A008FF97A /* NotificationService.swift */; };
 		FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */; };
+		FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB00726C4A714008FF97A /* ResetPasswordController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		FD6CAFFE26C3E1D2008FF97A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		FD6CB00126C3E91A008FF97A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		FD6CB00726C4A714008FF97A /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			children = (
 				FD6CAF1526BDEB2F008FF97A /* LoginController.swift */,
 				FD6CAF1926BDEB49008FF97A /* RegisterController.swift */,
+				FD6CB00726C4A714008FF97A /* ResetPasswordController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				FD6CAFE026C2179E008FF97A /* Post.swift in Sources */,
 				FD6CAFF026C35281008FF97A /* CommentService.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
+				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
 				FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */,
