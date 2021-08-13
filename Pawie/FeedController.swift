@@ -17,7 +17,9 @@ class FeedController: UICollectionViewController{
     private var posts = [Post]() {
         didSet {collectionView.reloadData()}
     }
-    var post: Post?
+    var post: Post? {
+        didSet { collectionView.reloadData() }
+    }
     
     
     //MARK: - LifyCycle
@@ -25,6 +27,9 @@ class FeedController: UICollectionViewController{
         super.viewDidLoad()
         configure()
         fetchPosts()
+        if post != nil {
+            checkIfUserLikedPosts()
+        }
         
         //create a new button
         let button = UIButton(type: .custom)
@@ -80,17 +85,23 @@ class FeedController: UICollectionViewController{
         }
     }
     
-        func checkIfUserLikedPosts() {
-            self.posts.forEach { post in
+    func checkIfUserLikedPosts() {
+        if let post = post {
+            PostService.checkIfUserLikedPost(post: post) { didlike in
+                self.post?.didLike = didlike
+             
+            }
+        }else{
+            posts.forEach { post in
                 PostService.checkIfUserLikedPost(post: post){ didlike in
                     if let index = self.posts.firstIndex(where: {$0.postID == post.postID}){
                         self.posts[index].didLike = didlike
                     }
-    
-    
                 }
             }
+            
         }
+    }
     
     //MARK: - Helpers
     
@@ -99,9 +110,8 @@ class FeedController: UICollectionViewController{
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         if post == nil{
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out",
-                                                               style: .plain, target: self,
-                                                               action: #selector(handleLogOut))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "logout"),
+                                                               style: .plain, target: self, action: #selector(handleLogOut))
         }
         navigationItem.title = "PAWIE"
         

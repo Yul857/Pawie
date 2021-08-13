@@ -92,6 +92,11 @@ class FeedCell: UICollectionViewCell{
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.text = "2 comments"
+        
+        let tab = UITapGestureRecognizer(target: self, action: #selector(didTapComment))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(tab)
+        
         return label
     }()
     
@@ -105,7 +110,6 @@ class FeedCell: UICollectionViewCell{
     
     private let postTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 days ago"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .lightGray
         return label
@@ -146,18 +150,6 @@ class FeedCell: UICollectionViewCell{
         addSubview(shareButton)
         shareButton.anchor(top: postImageView.bottomAnchor, right: rightAnchor, paddingRight: 20, height: 50)
        
-        
-//        let feedStack = UIStackView(arrangedSubviews: [likeStack, commentStack, shareButton])
-//        feedStack.distribution = .fillEqually
-//        feedStack.axis = .horizontal
-//        addSubview(feedStack)
-//        feedStack.anchor(top: postImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 50)
-        
-//        let divider = UIView()
-//        divider.backgroundColor = .lightGray
-//        addSubview(divider )
-//        divider.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 0.5)
-        
         addSubview(captionLabel)
         captionLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingLeft: 8, paddingRight: 8)
         
@@ -196,6 +188,8 @@ class FeedCell: UICollectionViewCell{
         likeLabel.text = viewModel.likesLabelText
         likeButton.tintColor = viewModel.likeButtonTintColor
         likeButton.setImage(viewModel.likeButtonImage, for: .normal)
+        
+        postTimeLabel.text = viewModel.timeStampString
     }
 }
 
