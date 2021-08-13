@@ -15,6 +15,8 @@ struct CommentService {
                                    "profileImageUrl": user.profileImageURL]
         
         COLLECTION_POSTS.document(postID).collection("comments").addDocument(data: data, completion: completion)
+        
+
     }
     
     static func fetchComments(forPost postID: String, completion: @escaping([Comment]) -> Void) {

@@ -137,4 +137,16 @@ struct PostService {
         }
     }
     
+    static func fetchCommentsNumber(post: Post, completion: @escaping(Int) -> Void) {
+        COLLECTION_POSTS.document(post.postID).collection("comments").getDocuments { snapshot, error in
+            if let error = error {
+                print("There is an error fetching comment count, \(error)")
+                return
+            }
+            let counts = snapshot?.documents.count
+            
+            completion(counts ?? 0)
+        }
+    }
+    
 }

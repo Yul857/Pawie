@@ -47,6 +47,18 @@ struct PostViewModel {
         }
     }
     
+
+    
+//    var commentsLabelText: String {
+//        if post.comments == 0 {
+//            return "0 comment"
+//        }else if post.comments != 1 {
+//            return "\(post.comments) comments"
+//        }else{
+//            return "\(post.comments) comment"
+//        }
+//    }
+    
     
     init(post: Post){
         self.post = post

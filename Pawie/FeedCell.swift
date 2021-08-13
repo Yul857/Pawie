@@ -91,11 +91,7 @@ class FeedCell: UICollectionViewCell{
     private let commentLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.text = "2 comments"
-        
-        let tab = UITapGestureRecognizer(target: self, action: #selector(didTapComment))
-        label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(tab)
+    
         
         return label
     }()
@@ -176,9 +172,24 @@ class FeedCell: UICollectionViewCell{
         delegate?.cell(self, didLike: viewModel.post)
     }
     
+    private func fetchComments() {
+        guard let viewModel = viewModel else { return }
+        PostService.fetchCommentsNumber(post: viewModel.post) { comments in
+            if comments == 0 {
+                self.commentLabel.text = "         "
+            }else if comments != 1{
+                self.commentLabel.text = "\(comments) comments"
+            }else{
+                self.commentLabel.text = "1 comment"
+            }
+        }
+    }
+    
     //MARK: - Helpers
     
     func configure() {
+        fetchComments()
+
         guard let viewModel = viewModel else {return}
         captionLabel.text = viewModel.caption
         postImageView.sd_setImage(with: viewModel.imageUrl)
@@ -188,6 +199,8 @@ class FeedCell: UICollectionViewCell{
         likeLabel.text = viewModel.likesLabelText
         likeButton.tintColor = viewModel.likeButtonTintColor
         likeButton.setImage(viewModel.likeButtonImage, for: .normal)
+        
+
         
         postTimeLabel.text = viewModel.timeStampString
     }
