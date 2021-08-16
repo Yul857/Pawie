@@ -55,6 +55,8 @@
 		FD6CB00226C3E91A008FF97A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB00126C3E91A008FF97A /* NotificationService.swift */; };
 		FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */; };
 		FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB00726C4A714008FF97A /* ResetPasswordController.swift */; };
+		FD6CB04026C8F1B4008FF97A /* ShoppingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB03F26C8F1B4008FF97A /* ShoppingHeader.swift */; };
+		FD6CB04326C8F202008FF97A /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB04226C8F202008FF97A /* ShoppingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		FD6CB00126C3E91A008FF97A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		FD6CB00726C4A714008FF97A /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
+		FD6CB03F26C8F1B4008FF97A /* ShoppingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingHeader.swift; sourceTree = "<group>"; };
+		FD6CB04226C8F202008FF97A /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		FD6CAEF226BC68DD008FF97A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FD6CB04526C8F216008FF97A /* ShoppingView */,
 				FD6CAF6626BF81E2008FF97A /* Profile View */,
 				FD6CAEF726BC6AD5008FF97A /* CustomTextField.swift */,
 				FD6CAF1126BDB658008FF97A /* FeedCell.swift */,
@@ -276,6 +281,15 @@
 				FD6CAF6326BF81D0008FF97A /* ProfileHeader.swift */,
 			);
 			name = "Profile View";
+			sourceTree = "<group>";
+		};
+		FD6CB04526C8F216008FF97A /* ShoppingView */ = {
+			isa = PBXGroup;
+			children = (
+				FD6CB03F26C8F1B4008FF97A /* ShoppingHeader.swift */,
+				FD6CB04226C8F202008FF97A /* ShoppingCell.swift */,
+			);
+			name = ShoppingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +427,7 @@
 				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
+				FD6CB04026C8F1B4008FF97A /* ShoppingHeader.swift in Sources */,
 				FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */,
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,
 				FD6CAEDB26BC681D008FF97A /* AppDelegate.swift in Sources */,
@@ -426,6 +441,7 @@
 				FD6CAF1A26BDEB49008FF97A /* RegisterController.swift in Sources */,
 				FD6CAF8E26C0C65F008FF97A /* SearchTappedController.swift in Sources */,
 				FD6CAFBC26C202A7008FF97A /* PostService.swift in Sources */,
+				FD6CB04326C8F202008FF97A /* ShoppingCell.swift in Sources */,
 				FD6CAF0B26BC7DBC008FF97A /* FeedController.swift in Sources */,
 				FD6CAF5826BEF602008FF97A /* ImageUploader.swift in Sources */,
 				FD6CAF5B26BEFAD1008FF97A /* AuthService.swift in Sources */,

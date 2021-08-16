@@ -60,7 +60,7 @@ class MainTabController: UITabBarController {
         
         let image = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "plus_unselected"), selectedImage: #imageLiteral(resourceName: "plus_unselected"), rootViewController: ImageController())
         
-        let shop = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "like_unselected"), selectedImage: #imageLiteral(resourceName: "like_selected"), rootViewController: ShopController())
+        let shop = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "like_unselected"), selectedImage: #imageLiteral(resourceName: "like_selected"), rootViewController: ShopController(collectionViewLayout: layout))
         
         let profileController = ProfileController(user: user)
         let profile = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: profileController)

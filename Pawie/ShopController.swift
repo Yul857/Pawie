@@ -7,21 +7,110 @@
 
 import UIKit
 
+private let cellIdentifier = "ShoppingCell"
+private let headerIdentifier = "shoppingHeader"
 
-class ShopController: UIViewController {
+
+class ShopController: UICollectionViewController{
     //MARK: - properties
     
-    
-    //MARK: - LifyCycle
+    private let searchController = UISearchController(searchResultsController: nil)
+
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        navigationItem.title = "Shop for your pets"
+        configureCollectionView()
+        configureSearchController()
+        collectionView.backgroundColor = .white
     }
-    
-    
+
     //MARK: - Helpers
-    
-    func configure() {
-        view.backgroundColor = .systemIndigo
+
+    func configureCollectionView() {
+        collectionView.register(ShoppingCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(ShoppingHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: headerIdentifier)
+    }
+
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+
+
+
+    //MARK: - collectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ShoppingCell
+//        cell.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+
+        return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! ShoppingHeader
+
+        return header
+    }
+}
+
+//MARK: - UICollectionViewDelegate
+extension ShopController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension ShopController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.width - 1) / 2
+        return CGSize(width: width, height: width + 50)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 280)
+    }
+}
+
+//MARK: -  UISearchBarDelegate
+
+extension ShopController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        collectionView.isHidden = false
+
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.showsCancelButton = false
+        searchBar.text = nil
+
+        collectionView.isHidden = false
+
+    }
+}
+
+extension ShopController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
     }
 }
