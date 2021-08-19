@@ -28,7 +28,6 @@ class FeedCell: UICollectionViewCell{
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        iv.image = #imageLiteral(resourceName: "venom-7")
         
         let tab = UITapGestureRecognizer(target: self, action: #selector(showUserProfile))
         iv.isUserInteractionEnabled = true

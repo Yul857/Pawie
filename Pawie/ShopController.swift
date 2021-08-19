@@ -20,9 +20,29 @@ class ShopController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Shop for your pets"
+//        navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shopping-cart"), style: .plain, target: self, action: #selector(checkoutTapped))
         configureCollectionView()
         configureSearchController()
         collectionView.backgroundColor = .white
+        
+        //create a new button
+        let button = UIButton(type: .custom)
+        //set image for button
+        button.setImage(UIImage(named: "shopping-cart"), for: .normal)
+        //add function for button
+        button.addTarget(self, action: #selector(checkoutTapped), for: .touchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+        
+        let barButton = UIBarButtonItem(customView: button)
+        //assign button to navigationbar
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    //MARK: - Actions
+    
+    @objc func checkoutTapped() {
+        print("DEBUG: Lets fo check out")
     }
 
     //MARK: - Helpers

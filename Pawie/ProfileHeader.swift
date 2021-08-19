@@ -25,7 +25,6 @@ class ProfileHeader: UICollectionReusableView {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.backgroundColor = .lightGray
-        iv.image = #imageLiteral(resourceName: "profile pic")
         return iv
     }()
     

@@ -43,6 +43,13 @@ class ShoppingCell: UICollectionViewCell {
         return label
     }()
     
+    private let addItem: UIButton = {
+        let iv = UIButton()
+        iv.setImage(#imageLiteral(resourceName: "add-Goods"), for: .normal)
+        iv.addTarget(self, action: #selector(addItemToCart), for: .touchUpInside)
+        return iv
+    }()
+    
     
     
     //MARK: - LifeCycle
@@ -59,15 +66,26 @@ class ShoppingCell: UICollectionViewCell {
         goodsTitle.numberOfLines = 0
         
         addSubview(originalPriceLabel)
-        originalPriceLabel.anchor(top: goodsTitle.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 8)
+        originalPriceLabel.anchor(top: goodsTitle.bottomAnchor, left: leftAnchor, paddingTop: 10, paddingLeft: 8)
         
         addSubview(discountedPriceLabel)
-        discountedPriceLabel.anchor(top: originalPriceLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 8)
+        discountedPriceLabel.anchor(top: originalPriceLabel.bottomAnchor, left: leftAnchor, paddingTop: 10, paddingLeft: 8)
+        
+        contentView.addSubview(addItem)
+        addItem.anchor(top: goodsTitle.bottomAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 8, width: 40, height: 40)
+        addItem.layer.cornerRadius = 40 / 2
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    //MARK: - Actions
+    
+    @objc func addItemToCart() {
+        print("DEBUG: Add this item to cart")
     }
     
 
