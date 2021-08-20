@@ -365,6 +365,7 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SideMenu (5.0.1)
   - SteviaLayout (4.7.3)
   - YPImagePicker (4.5.0):
     - PryntTrimmerView (~> 4.0.2)
@@ -380,6 +381,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JGProgressHUD
   - SDWebImage (~> 5.0)
+  - SideMenu
   - YPImagePicker
 
 SPEC REPOS:
@@ -411,6 +413,7 @@ SPEC REPOS:
     - Protobuf
     - PryntTrimmerView
     - SDWebImage
+    - SideMenu
     - SteviaLayout
     - YPImagePicker
 
@@ -442,9 +445,10 @@ SPEC CHECKSUMS:
   Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: e54af18a2ec727294a16fe53e6fcaa8f6c14e884
+PODFILE CHECKSUM: 12082c81a57f2e98df6cfa3962dd70474c7b8d85
 
 COCOAPODS: 1.10.1

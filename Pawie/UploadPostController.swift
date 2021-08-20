@@ -25,7 +25,6 @@ class UploadPostController: UIViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "profile pic")
         return iv
     }()
     

@@ -8,6 +8,27 @@
 import UIKit
 import JGProgressHUD
 
+extension UIView {
+    func edgeTo(_ view: UIView) {
+        view.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+
+    func pinMenuTo(_ view: UIView, with constant: CGFloat) {
+        view.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -constant).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
+
+
 extension UIViewController{
     static let hud = JGProgressHUD(style: .dark)
     func configureGradientLayer(){

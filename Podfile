@@ -16,5 +16,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'SDWebImage', '~> 5.0'
 pod 'YPImagePicker'
 pod 'JGProgressHUD'
+pod 'SideMenu'
 
 end

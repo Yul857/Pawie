@@ -23,6 +23,10 @@ class FeedController: UICollectionViewController{
     
     
     //MARK: - LifyCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -69,6 +73,14 @@ class FeedController: UICollectionViewController{
         navigationController?.pushViewController(controller, animated: false)
     }
     
+    
+    @objc func goToService() {
+        print("DEBUG: GO TO SERVICE")
+        let controller = ServiceController()
+        navigationController?.pushViewController(controller, animated: false)
+        
+    }
+    
     //MARK: - API
     func fetchPosts() {
         guard post == nil else {return}
@@ -110,8 +122,11 @@ class FeedController: UICollectionViewController{
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         if post == nil{
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "logout"),
+            let logOutButton = UIBarButtonItem(image: UIImage(named: "logout"),
                                                                style: .plain, target: self, action: #selector(handleLogOut))
+            let serviceButton = UIBarButtonItem(image: UIImage(named: "service-icon"),
+                                                style: .plain, target: self, action: #selector(goToService))
+            navigationItem.leftBarButtonItems = [serviceButton, logOutButton]
         }
         navigationItem.title = "PAWIE"
         
