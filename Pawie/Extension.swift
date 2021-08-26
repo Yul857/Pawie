@@ -39,6 +39,14 @@ extension UIViewController{
         gradient.frame = view.frame
     }
     
+    func configurePinkGradientLayer(){
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPink.cgColor, UIColor.white.cgColor]
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+    
     func showLoader(_ show: Bool){
         view.endEditing(true)
         if show {

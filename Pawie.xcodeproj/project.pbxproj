@@ -66,6 +66,8 @@
 		FD6CB12C26D6D99C008FF97A /* VetChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */; };
 		FD6CB12F26D735F8008FF97A /* ConsultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB12E26D735F8008FF97A /* ConsultService.swift */; };
 		FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB15926D74F7A008FF97A /* Message.swift */; };
+		FD7FAC6426D83AFE0066EAA6 /* AdoptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */; };
+		FD7FAC6726D8453D0066EAA6 /* AddAdoptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6626D8453D0066EAA6 /* AddAdoptionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetChatViewController.swift; sourceTree = "<group>"; };
 		FD6CB12E26D735F8008FF97A /* ConsultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultService.swift; sourceTree = "<group>"; };
 		FD6CB15926D74F7A008FF97A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionCell.swift; sourceTree = "<group>"; };
+		FD7FAC6626D8453D0066EAA6 /* AddAdoptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdoptionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 				FD6CAFE826C329DA008FF97A /* CommentCell.swift */,
 				FD6CAFEC26C3338D008FF97A /* CommentInputAccessoryView.swift */,
 				FD6CAFFB26C3C826008FF97A /* NotificationCell.swift */,
+				FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				FD6CB0CC26CF5670008FF97A /* GiftController.swift */,
 				FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */,
 				FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */,
+				FD7FAC6626D8453D0066EAA6 /* AddAdoptionController.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -459,12 +465,14 @@
 				FD6CAFE626C326AB008FF97A /* CommentController.swift in Sources */,
 				FD6CAF1D26BE14B0008FF97A /* AuthenticationViewModel.swift in Sources */,
 				FD6CAFE026C2179E008FF97A /* Post.swift in Sources */,
+				FD7FAC6726D8453D0066EAA6 /* AddAdoptionController.swift in Sources */,
 				FD6CAFF026C35281008FF97A /* CommentService.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
 				FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
+				FD7FAC6426D83AFE0066EAA6 /* AdoptionCell.swift in Sources */,
 				FD6CB04026C8F1B4008FF97A /* ShoppingHeader.swift in Sources */,
 				FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */,
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,

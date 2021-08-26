@@ -47,7 +47,8 @@ class VetChatViewController: MessagesViewController, MessagesDataSource, Message
     //MARK: - helpers
     
     func currentSender() -> SenderType {
-        return ChatUser(senderId: Auth.auth().currentUser?.uid ?? "self", displayName: Auth.auth().currentUser?.displayName ?? "Name not found")
+        return ChatUser(senderId: Auth.auth().currentUser?.uid ?? "self",
+                        displayName: Auth.auth().currentUser?.displayName ?? "Name not found")
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

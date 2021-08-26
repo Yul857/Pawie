@@ -12,7 +12,7 @@ class CustomTextField: UITextField {
         super.init(frame: .zero)
         
         let spacer = UIView()
-        spacer.setDimensions(height: 50, width: 12)
+        spacer.setDimensions(height: 40, width: 12)
         leftView = spacer
         leftViewMode = .always
         
@@ -22,7 +22,7 @@ class CustomTextField: UITextField {
         keyboardAppearance = .dark
         keyboardType = .emailAddress
         backgroundColor = UIColor(white: 1, alpha: 0.5)
-        setHeight(50)
+        setHeight(40)
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: UIColor(white: 0, alpha: 0.5)])
         
     }

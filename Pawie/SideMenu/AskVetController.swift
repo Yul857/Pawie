@@ -63,7 +63,7 @@ extension AskVetController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = VetChatViewController()
-        vc.title = "Chat"
+        vc.title = "ASK DR. BU"
         navigationController?.pushViewController(vc, animated: true)
     }
 }

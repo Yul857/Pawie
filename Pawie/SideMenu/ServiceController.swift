@@ -20,7 +20,7 @@ class ServiceController: UIViewController {
     private let askVetButton: UIButton = {
         let button = UIButton()
         button.setTitle("ASK VETERINARIAN", for: .normal)
-        button.backgroundColor = .systemRed
+        //button.backgroundColor = .systemRed
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -32,7 +32,7 @@ class ServiceController: UIViewController {
     private let lostFoundButton: UIButton = {
         let button = UIButton()
         button.setTitle("LOST/ FOUND PET", for: .normal)
-        button.backgroundColor = .systemOrange
+        //button.backgroundColor = .systemOrange
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -41,22 +41,10 @@ class ServiceController: UIViewController {
         return button
     }()
     
-    private let hospitalNearMe: UIButton = {
-        let button = UIButton()
-        button.setTitle("ANIMAL HOSPITAL", for: .normal)
-        button.backgroundColor = .systemYellow
-        button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
-        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.addTarget(self, action: #selector(hospitalTapped), for: .touchUpInside)
-        return button
-    }()
-    
     private let giftButton: UIButton = {
         let button = UIButton()
         button.setTitle("GIFT", for: .normal)
-        button.backgroundColor = .systemGreen
+        //button.backgroundColor = .systemGreen
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -68,7 +56,7 @@ class ServiceController: UIViewController {
     private let tryLuckButton: UIButton = {
         let button = UIButton()
         button.setTitle("TRY YOUR LUCK", for: .normal)
-        button.backgroundColor = .systemBlue
+        //button.backgroundColor = .systemBlue
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -80,7 +68,7 @@ class ServiceController: UIViewController {
     private let adoptionButton: UIButton = {
         let button = UIButton()
         button.setTitle("ADOPTION", for: .normal)
-        button.backgroundColor = .systemIndigo
+        //button.backgroundColor = .systemIndigo
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -126,17 +114,14 @@ class ServiceController: UIViewController {
         menuView.addSubview(lostFoundButton)
         lostFoundButton.anchor(top: askVetButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
         
-        menuView.addSubview(hospitalNearMe)
-        hospitalNearMe.anchor(top: lostFoundButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
-        
-        menuView.addSubview(giftButton)
-        giftButton.anchor(top: hospitalNearMe.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
+        menuView.addSubview(adoptionButton)
+        adoptionButton.anchor(top: lostFoundButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
         
         menuView.addSubview(tryLuckButton)
-        tryLuckButton.anchor(top: giftButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
+        tryLuckButton.anchor(top: adoptionButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
         
-        menuView.addSubview(adoptionButton)
-        adoptionButton.anchor(top: tryLuckButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
+        menuView.addSubview(giftButton)
+        giftButton.anchor(top: tryLuckButton.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, height: 80)
         
         containerView.edgeTo(view)
     }
@@ -179,10 +164,6 @@ class ServiceController: UIViewController {
         let nav = LostNFoundController()
         self.navigationController?.pushViewController(nav, animated: true)
     }
-    @objc func hospitalTapped() {
-        let nav = HospitalController()
-        self.navigationController?.pushViewController(nav, animated: true)
-    }
     @objc func giftTapped() {
         let nav = GiftController()
         self.navigationController?.pushViewController(nav, animated: true)
@@ -192,7 +173,7 @@ class ServiceController: UIViewController {
         self.navigationController?.pushViewController(nav, animated: false)
     }
     @objc func adoptionTapped() {
-        let nav = AdoptiontController()
+        let nav = AdoptionController()
         self.navigationController?.pushViewController(nav, animated: false)
     }
 }
