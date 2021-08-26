@@ -17,7 +17,6 @@
 		FD6CAEF826BC6AD5008FF97A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAEF726BC6AD5008FF97A /* CustomTextField.swift */; };
 		FD6CAEFC26BC6C74008FF97A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAEFB26BC6C74008FF97A /* Extension.swift */; };
 		FD6CAEFF26BC737E008FF97A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAEFE26BC737E008FF97A /* MainTabController.swift */; };
-		FD6CAF0226BC7D3E008FF97A /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF0126BC7D3E008FF97A /* SearchController.swift */; };
 		FD6CAF0526BC7D8A008FF97A /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF0426BC7D8A008FF97A /* ImageSelectorController.swift */; };
 		FD6CAF0826BC7DA2008FF97A /* ShopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF0726BC7DA2008FF97A /* ShopController.swift */; };
 		FD6CAF0B26BC7DBC008FF97A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CAF0A26BC7DBC008FF97A /* FeedController.swift */; };
@@ -64,6 +63,9 @@
 		FD6CB0D026CF56A0008FF97A /* TryLuckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */; };
 		FD6CB0D326CF56B4008FF97A /* AdoptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */; };
 		FD6CB0D626CF5AB4008FF97A /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0D526CF5AB4008FF97A /* ServiceController.swift */; };
+		FD6CB12C26D6D99C008FF97A /* VetChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */; };
+		FD6CB12F26D735F8008FF97A /* ConsultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB12E26D735F8008FF97A /* ConsultService.swift */; };
+		FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB15926D74F7A008FF97A /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +83,6 @@
 		FD6CAEF726BC6AD5008FF97A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FD6CAEFB26BC6C74008FF97A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FD6CAEFE26BC737E008FF97A /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
-		FD6CAF0126BC7D3E008FF97A /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		FD6CAF0426BC7D8A008FF97A /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		FD6CAF0726BC7DA2008FF97A /* ShopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopController.swift; sourceTree = "<group>"; };
 		FD6CAF0A26BC7DBC008FF97A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
@@ -128,6 +129,9 @@
 		FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryLuckController.swift; sourceTree = "<group>"; };
 		FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionController.swift; sourceTree = "<group>"; };
 		FD6CB0D526CF5AB4008FF97A /* ServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceController.swift; sourceTree = "<group>"; };
+		FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetChatViewController.swift; sourceTree = "<group>"; };
+		FD6CB12E26D735F8008FF97A /* ConsultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultService.swift; sourceTree = "<group>"; };
+		FD6CB15926D74F7A008FF97A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,7 @@
 				FD6CAFDF26C2179E008FF97A /* Post.swift */,
 				FD6CAFF226C35810008FF97A /* Comment.swift */,
 				FD6CAFFE26C3E1D2008FF97A /* Notification.swift */,
+				FD6CB15926D74F7A008FF97A /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,7 +248,6 @@
 				FD6CAF1426BDEB10008FF97A /* Authentication */,
 				FD6CAEFE26BC737E008FF97A /* MainTabController.swift */,
 				FD6CAF0A26BC7DBC008FF97A /* FeedController.swift */,
-				FD6CAF0126BC7D3E008FF97A /* SearchController.swift */,
 				FD6CAF0426BC7D8A008FF97A /* ImageSelectorController.swift */,
 				FD6CAF0726BC7DA2008FF97A /* ShopController.swift */,
 				FD6CAF0D26BC7DD3008FF97A /* ProfileController.swift */,
@@ -265,6 +269,7 @@
 				FD6CAFBB26C202A7008FF97A /* PostService.swift */,
 				FD6CAFEF26C35281008FF97A /* CommentService.swift */,
 				FD6CB00126C3E91A008FF97A /* NotificationService.swift */,
+				FD6CB12E26D735F8008FF97A /* ConsultService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			children = (
 				FD6CB0D526CF5AB4008FF97A /* ServiceController.swift */,
 				FD6CB0BF26CF5402008FF97A /* AskVetController.swift */,
+				FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */,
 				FD6CB0C226CF543E008FF97A /* LostNFoundController.swift */,
 				FD6CB0C526CF563F008FF97A /* HospitalController.swift */,
 				FD6CB0CC26CF5670008FF97A /* GiftController.swift */,
@@ -444,10 +450,10 @@
 				FD6CAFFC26C3C826008FF97A /* NotificationCell.swift in Sources */,
 				FD6CAEF826BC6AD5008FF97A /* CustomTextField.swift in Sources */,
 				FD6CAF1626BDEB2F008FF97A /* LoginController.swift in Sources */,
+				FD6CB12C26D6D99C008FF97A /* VetChatViewController.swift in Sources */,
 				FD6CAEFF26BC737E008FF97A /* MainTabController.swift in Sources */,
 				FD6CAFF326C35810008FF97A /* Comment.swift in Sources */,
 				FD6CB0C026CF5403008FF97A /* AskVetController.swift in Sources */,
-				FD6CAF0226BC7D3E008FF97A /* SearchController.swift in Sources */,
 				FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */,
 				FD6CAFB626C142BB008FF97A /* UploadPostController.swift in Sources */,
 				FD6CAFE626C326AB008FF97A /* CommentController.swift in Sources */,
@@ -457,12 +463,14 @@
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
+				FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
 				FD6CB04026C8F1B4008FF97A /* ShoppingHeader.swift in Sources */,
 				FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */,
 				FD6CAEDF26BC681D008FF97A /* ViewController.swift in Sources */,
 				FD6CAEDB26BC681D008FF97A /* AppDelegate.swift in Sources */,
 				FD6CAF6F26C09FDE008FF97A /* ProfileHeaderViewModel.swift in Sources */,
+				FD6CB12F26D735F8008FF97A /* ConsultService.swift in Sources */,
 				FD6CAFB926C1FB9F008FF97A /* InputTextView.swift in Sources */,
 				FD6CAF9126C0C7E0008FF97A /* UserCell.swift in Sources */,
 				FD6CB00226C3E91A008FF97A /* NotificationService.swift in Sources */,

@@ -71,9 +71,9 @@ class ShoppingCell: UICollectionViewCell {
         addSubview(discountedPriceLabel)
         discountedPriceLabel.anchor(top: originalPriceLabel.bottomAnchor, left: leftAnchor, paddingTop: 10, paddingLeft: 8)
         
-        contentView.addSubview(addItem)
-        addItem.anchor(top: goodsTitle.bottomAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 8, width: 40, height: 40)
-        addItem.layer.cornerRadius = 40 / 2
+//        contentView.addSubview(addItem)
+//        addItem.anchor(top: goodsTitle.bottomAnchor, right: rightAnchor, paddingTop: 10, paddingRight: 8, width: 40, height: 40)
+//        addItem.layer.cornerRadius = 40 / 2
         
     }
     

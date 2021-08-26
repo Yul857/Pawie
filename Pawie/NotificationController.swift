@@ -25,11 +25,8 @@ class NotificationController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureTableView()
         fetchNotifications()
-        
- 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,9 +62,6 @@ class NotificationController: UITableViewController {
         fetchNotifications()
         refresher.endRefreshing()
     }
-    
-    
-    
     //MARK: - Helpers
     
     func configureTableView() {
@@ -81,8 +75,6 @@ class NotificationController: UITableViewController {
         refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         tableView.refreshControl = refresher
     }
-    
-    
 }
 
 

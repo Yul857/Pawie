@@ -351,9 +351,14 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.6.1)
+  - InputBarAccessoryView (4.3.3):
+    - InputBarAccessoryView/Core (= 4.3.3)
+  - InputBarAccessoryView/Core (4.3.3)
   - IQKeyboardManagerSwift (6.5.6)
   - JGProgressHUD (2.2)
   - leveldb-library (1.22.1)
+  - MessageKit (3.1.1):
+    - InputBarAccessoryView (~> 4.3.0)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -378,8 +383,10 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Messaging
   - Firebase/Storage
+  - InputBarAccessoryView
   - IQKeyboardManagerSwift
   - JGProgressHUD
+  - MessageKit
   - SDWebImage (~> 5.0)
   - SideMenu
   - YPImagePicker
@@ -405,9 +412,11 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - InputBarAccessoryView
     - IQKeyboardManagerSwift
     - JGProgressHUD
     - leveldb-library
+    - MessageKit
     - nanopb
     - PromisesObjC
     - Protobuf
@@ -437,9 +446,11 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
+  InputBarAccessoryView: 8e7fc09e9cba75e0fee5da13450e15c194806f69
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  MessageKit: a3e612a54a24f5d9ca0295760749b481afd3f2da
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
@@ -449,6 +460,6 @@ SPEC CHECKSUMS:
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: 12082c81a57f2e98df6cfa3962dd70474c7b8d85
+PODFILE CHECKSUM: 9e5972f21d90a2c555a5b0cd7666ed975240cfab
 
 COCOAPODS: 1.10.1

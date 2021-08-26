@@ -89,6 +89,17 @@ class ServiceController: UIViewController {
         return button
     }()
     
+    private let headerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Welcome to the \n PAWIE Service", for: .normal)
+        button.titleLabel?.backgroundColor =  .black
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        return button
+    }()
+    
+    
+    
     //MARK: - LIFECYCLES
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,8 +112,12 @@ class ServiceController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "service-icon"), style: .plain, target: self, action: #selector(goBackToFeed))
         
 
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         navigationItem.setLeftBarButton(menuBarButtonItem, animated: false)
+        
+        containerView.backgroundColor = .white
+        containerView.addSubview(headerButton)
+        headerButton.center(inView: containerView)
         
         menuView.pinMenuTo(view, with: slideInMenuPadding)
         menuView.addSubview(askVetButton)
