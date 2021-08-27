@@ -11,6 +11,16 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private let reuseIdentifier = "adoptionCell"
     //MARK: - properties
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var adoptions = [Adoption]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    private var inSearchMode: Bool {
+        return searchController.isActive && !searchController.searchBar.text!.isEmpty
+    }
+    private var filteredAdoptions = [Adoption]()
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -29,6 +39,8 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         configure()
         view.backgroundColor = .white
+        fetchAdoptions()
+        configureSearchController()
         
         
         //create a new button
@@ -60,17 +72,36 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.fillSuperview()
         
     }
+    
+    func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search breed, area code..."
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func fetchAdoptions() {
+        AdoptionService.fetchAdoption { adoptions in
+            self.adoptions = adoptions
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 //MARK: - UICollectionViewDataSource
 
 extension AdoptionController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return inSearchMode ? filteredAdoptions.count : adoptions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AdoptionCell
+        let adoption = inSearchMode ? filteredAdoptions[indexPath.row] : adoptions[indexPath.row]
+        cell.viewModel =  AdoptionViewModel(adoption: adoption)
         return cell
     }
 }
@@ -86,5 +117,31 @@ extension AdoptionController: UICollectionViewDelegateFlowLayout{
         height += 60
         
         return CGSize(width: width, height: height)
+    }
+}
+
+//MARK: -  UISearchBarDelegate
+
+extension AdoptionController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        collectionView.isHidden = false
+
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.showsCancelButton = false
+        searchBar.text = nil
+
+        collectionView.isHidden = false
+
+    }
+}
+
+extension AdoptionController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else {return}
+        filteredAdoptions = adoptions.filter({$0.area.contains(searchText) || $0.breed.lowercased().contains(searchText) || $0.description.lowercased().contains(searchText) || $0.petName.lowercased().contains(searchText)})
+        self.collectionView.reloadData()
     }
 }

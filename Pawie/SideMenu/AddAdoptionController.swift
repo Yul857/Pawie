@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Firebase
 
 class AddAdoptionController: UIViewController {
+ 
     
     private var profileImage: UIImage?
     private let plusPhotoButton: UIButton = {
@@ -26,7 +28,7 @@ class AddAdoptionController: UIViewController {
     
     private let areaTextField: CustomTextField = CustomTextField(placeholder: "Area code")
     
-    private let discriptionTextField: CustomTextField = CustomTextField(placeholder: "Please describe the pet")
+    private let descriptionTextField: CustomTextField = CustomTextField(placeholder: "Please describe the pet")
     
     private let phoneTextField: CustomTextField = CustomTextField(placeholder: "Enter your phone number(optional)")
     private let emailTextField: CustomTextField = CustomTextField(placeholder: "Enter your Email address(optional)")
@@ -47,6 +49,19 @@ class AddAdoptionController: UIViewController {
     
     //MARK: - Action
     
+    func updateForm() {
+        let petname = petNameTextField.text
+        let breed = breedTextField.text
+        let age = ageTextField.text
+        let area = areaTextField.text
+        let description = descriptionTextField.text
+        if petname?.isEmpty == false && breed?.isEmpty == false
+            && age?.isEmpty == false && area?.isEmpty == false  && description?.isEmpty == false{
+            addButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+            addButton.isEnabled = true
+        }
+    }
+    
     @objc func textDidChange(sender: UITextField) {
 //        if sender == emailTextField{
 //            viewModel.email = sender.text
@@ -62,8 +77,9 @@ class AddAdoptionController: UIViewController {
 //            viewModel.bio = sender.text
 //        }
 //
-//        updateForm()
+        updateForm()
     }
+    
     
     @objc func handleProfilePictureSelected(){
         let picker = UIImagePickerController()
@@ -74,23 +90,26 @@ class AddAdoptionController: UIViewController {
     }
     
     @objc func handleAddAdoption(){
-//        guard let email = emailTextField.text else{return}
-//        guard let password = passwordTextfield.text else{return}
-//        guard let ownername = ownerNameTextField.text else{return}
-//        guard let petname = petNameTextField.text else {return}
-//        guard let username = userNameTextField.text?.lowercased() else{return}
-//        guard let bio = bioTextField.text else {return}
-//        guard let profileImage = self.profileImage else {return}
-//
-//        let credentials = AuthCredentials(email: email, password: password, ownername: ownername, petname: petname, username: username, bio: bio, profileImage: profileImage)
-//        AuthService.registerUser(withCredentials: credentials) { (error) in
-//            if let error = error{
-//                print("DEBUG: Failed to register, \(error)")
-//                return
-//
-//            }
-//            self.delegate?.authenticationDidComplete()
-//    }
+        guard let petName = petNameTextField.text else{return}
+        guard let breed = breedTextField.text else{return}
+        guard let age = ageTextField.text else{return}
+        guard let area = areaTextField.text else {return}
+        guard let description = descriptionTextField.text?.lowercased() else{return}
+        let phone = phoneTextField.text ?? "phone unknown"
+        let email = emailTextField.text ?? "Email unknown"
+        guard let petImage = self.profileImage else {return}
+
+        let credentials = AdoptionCredentials(petName: petName, breed: breed, age: age,
+                                              area: area, description: description, phone: phone,
+                                              email: email, petImage: petImage, time: Timestamp())
+        AdoptionService.uploadAdoption(withCredentials: credentials) { error in
+            if let  error = error {
+                print("There is an error uploading adoption post \(error.localizedDescription)")
+                return
+            }else{
+                self.navigationController?.popViewController(animated: false)
+            }
+        }
         
     }
     
@@ -103,6 +122,7 @@ class AddAdoptionController: UIViewController {
     }
     
     //MARK: - Helpers
+
     
     func configureUI() {
         configurePinkGradientLayer()
@@ -112,7 +132,7 @@ class AddAdoptionController: UIViewController {
         plusPhotoButton.setDimensions(height: 100, width: 100)
         plusPhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
         
-        let stack = UIStackView(arrangedSubviews: [petNameTextField, breedTextField, ageTextField, areaTextField, discriptionTextField, phoneTextField, emailTextField, addButton])
+        let stack = UIStackView(arrangedSubviews: [petNameTextField, breedTextField, ageTextField, areaTextField, descriptionTextField, phoneTextField, emailTextField, addButton])
         stack.axis = .vertical
         stack.spacing = 20
         
@@ -126,7 +146,7 @@ class AddAdoptionController: UIViewController {
         breedTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         ageTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         areaTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        discriptionTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        descriptionTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         phoneTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }

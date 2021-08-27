@@ -20,7 +20,6 @@ class ServiceController: UIViewController {
     private let askVetButton: UIButton = {
         let button = UIButton()
         button.setTitle("ASK VETERINARIAN", for: .normal)
-        //button.backgroundColor = .systemRed
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -32,7 +31,6 @@ class ServiceController: UIViewController {
     private let lostFoundButton: UIButton = {
         let button = UIButton()
         button.setTitle("LOST/ FOUND PET", for: .normal)
-        //button.backgroundColor = .systemOrange
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -44,7 +42,6 @@ class ServiceController: UIViewController {
     private let giftButton: UIButton = {
         let button = UIButton()
         button.setTitle("GIFT", for: .normal)
-        //button.backgroundColor = .systemGreen
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -56,7 +53,6 @@ class ServiceController: UIViewController {
     private let tryLuckButton: UIButton = {
         let button = UIButton()
         button.setTitle("TRY YOUR LUCK", for: .normal)
-        //button.backgroundColor = .systemBlue
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)
@@ -68,7 +64,6 @@ class ServiceController: UIViewController {
     private let adoptionButton: UIButton = {
         let button = UIButton()
         button.setTitle("ADOPTION", for: .normal)
-        //button.backgroundColor = .systemIndigo
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.setTitleColor(.black, for: .normal)

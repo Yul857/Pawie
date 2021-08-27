@@ -58,7 +58,6 @@
 		FD6CB04326C8F202008FF97A /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB04226C8F202008FF97A /* ShoppingCell.swift */; };
 		FD6CB0C026CF5403008FF97A /* AskVetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0BF26CF5402008FF97A /* AskVetController.swift */; };
 		FD6CB0C326CF543E008FF97A /* LostNFoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0C226CF543E008FF97A /* LostNFoundController.swift */; };
-		FD6CB0C626CF563F008FF97A /* HospitalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0C526CF563F008FF97A /* HospitalController.swift */; };
 		FD6CB0CD26CF5670008FF97A /* GiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0CC26CF5670008FF97A /* GiftController.swift */; };
 		FD6CB0D026CF56A0008FF97A /* TryLuckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */; };
 		FD6CB0D326CF56B4008FF97A /* AdoptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */; };
@@ -68,6 +67,9 @@
 		FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CB15926D74F7A008FF97A /* Message.swift */; };
 		FD7FAC6426D83AFE0066EAA6 /* AdoptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */; };
 		FD7FAC6726D8453D0066EAA6 /* AddAdoptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6626D8453D0066EAA6 /* AddAdoptionController.swift */; };
+		FD7FAC6A26D856C20066EAA6 /* AdoptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */; };
+		FD7FAC6D26D86E4B0066EAA6 /* Adoption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */; };
+		FD7FAC7026D896770066EAA6 /* AdoptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,7 +128,6 @@
 		FD6CB04226C8F202008FF97A /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		FD6CB0BF26CF5402008FF97A /* AskVetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskVetController.swift; sourceTree = "<group>"; };
 		FD6CB0C226CF543E008FF97A /* LostNFoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostNFoundController.swift; sourceTree = "<group>"; };
-		FD6CB0C526CF563F008FF97A /* HospitalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalController.swift; sourceTree = "<group>"; };
 		FD6CB0CC26CF5670008FF97A /* GiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftController.swift; sourceTree = "<group>"; };
 		FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryLuckController.swift; sourceTree = "<group>"; };
 		FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionController.swift; sourceTree = "<group>"; };
@@ -136,6 +137,9 @@
 		FD6CB15926D74F7A008FF97A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionCell.swift; sourceTree = "<group>"; };
 		FD7FAC6626D8453D0066EAA6 /* AddAdoptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdoptionController.swift; sourceTree = "<group>"; };
+		FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionService.swift; sourceTree = "<group>"; };
+		FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adoption.swift; sourceTree = "<group>"; };
+		FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,7 @@
 				FD6CAFF226C35810008FF97A /* Comment.swift */,
 				FD6CAFFE26C3E1D2008FF97A /* Notification.swift */,
 				FD6CB15926D74F7A008FF97A /* Message.swift */,
+				FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				FD6CAFE226C21D35008FF97A /* PostViewModel.swift */,
 				FD6CAFF526C35CBA008FF97A /* CommentViewModel.swift */,
 				FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */,
+				FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 				FD6CAFEF26C35281008FF97A /* CommentService.swift */,
 				FD6CB00126C3E91A008FF97A /* NotificationService.swift */,
 				FD6CB12E26D735F8008FF97A /* ConsultService.swift */,
+				FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -324,7 +331,6 @@
 				FD6CB0BF26CF5402008FF97A /* AskVetController.swift */,
 				FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */,
 				FD6CB0C226CF543E008FF97A /* LostNFoundController.swift */,
-				FD6CB0C526CF563F008FF97A /* HospitalController.swift */,
 				FD6CB0CC26CF5670008FF97A /* GiftController.swift */,
 				FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */,
 				FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */,
@@ -462,6 +468,7 @@
 				FD6CB0C026CF5403008FF97A /* AskVetController.swift in Sources */,
 				FD6CAF6C26C098C7008FF97A /* UserService.swift in Sources */,
 				FD6CAFB626C142BB008FF97A /* UploadPostController.swift in Sources */,
+				FD7FAC6A26D856C20066EAA6 /* AdoptionService.swift in Sources */,
 				FD6CAFE626C326AB008FF97A /* CommentController.swift in Sources */,
 				FD6CAF1D26BE14B0008FF97A /* AuthenticationViewModel.swift in Sources */,
 				FD6CAFE026C2179E008FF97A /* Post.swift in Sources */,
@@ -470,6 +477,7 @@
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
+				FD7FAC6D26D86E4B0066EAA6 /* Adoption.swift in Sources */,
 				FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
 				FD7FAC6426D83AFE0066EAA6 /* AdoptionCell.swift in Sources */,
@@ -498,8 +506,8 @@
 				FD6CAF6126BF81C0008FF97A /* ProfileCell.swift in Sources */,
 				FD6CAF0826BC7DA2008FF97A /* ShopController.swift in Sources */,
 				FD6CB0CD26CF5670008FF97A /* GiftController.swift in Sources */,
+				FD7FAC7026D896770066EAA6 /* AdoptionViewModel.swift in Sources */,
 				FD6CB0D326CF56B4008FF97A /* AdoptionController.swift in Sources */,
-				FD6CB0C626CF563F008FF97A /* HospitalController.swift in Sources */,
 				FD6CAFFF26C3E1D2008FF97A /* Notification.swift in Sources */,
 				FD6CAEDD26BC681D008FF97A /* SceneDelegate.swift in Sources */,
 				FD6CAF5E26BEFB8D008FF97A /* Constants.swift in Sources */,

@@ -20,7 +20,6 @@ class ShopController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Shop for your pets"
-//        navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shopping-cart"), style: .plain, target: self, action: #selector(checkoutTapped))
         configureCollectionView()
         configureSearchController()
         collectionView.backgroundColor = .white

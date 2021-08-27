@@ -6,18 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 class AdoptionCell: UICollectionViewCell {
     //MARK: - properties
     
+    var viewModel: AdoptionViewModel? {
+        didSet{configure()}
+        }
+    
     private let postImageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
         iv.backgroundColor = .lightGray
-        iv.image = #imageLiteral(resourceName: "profile pic")
         return iv
     }()
     
@@ -30,7 +34,6 @@ class AdoptionCell: UICollectionViewCell {
     
     private let petName: UILabel = {
         let label = UILabel()
-        label.text = "BOBO"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
@@ -44,7 +47,6 @@ class AdoptionCell: UICollectionViewCell {
     
     private let breed: UILabel = {
         let label = UILabel()
-        label.text = "Siamese"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
@@ -58,7 +60,6 @@ class AdoptionCell: UICollectionViewCell {
     
     private let age: UILabel = {
         let label = UILabel()
-        label.text = "2"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
@@ -72,12 +73,11 @@ class AdoptionCell: UICollectionViewCell {
     
     private let area: UILabel = {
         let label = UILabel()
-        label.text = "92117"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
-    private let discriptionLabel: UILabel = {
+    private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Description:"
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -86,9 +86,8 @@ class AdoptionCell: UICollectionViewCell {
     
     
     
-    private let discription: UILabel = {
+    private let descripe: UILabel = {
         let label = UILabel()
-        label.text = "He is a cute, shy and locing creature He is a cute, shy and locing creature He is a cute, shy and locing creature He is a cute, shy and locing creature He is a cute, shy and locing creature He is a cute, shy and locing creature He is a cute, shy and locing creature He is a cute"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
@@ -103,15 +102,18 @@ class AdoptionCell: UICollectionViewCell {
     
     private let phoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "123456"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "bobo@gmail.com"
         label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
+    private let timeLabel: UILabel = {
+        let label = UILabel()
         return label
     }()
     
@@ -148,11 +150,11 @@ class AdoptionCell: UICollectionViewCell {
         addSubview(area)
         area.anchor(top: ageLabel.bottomAnchor, left: areaLabel.rightAnchor, paddingTop: 8, paddingLeft: 4)
         
-        addSubview(discriptionLabel)
-        discriptionLabel.anchor(top: areaLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        addSubview(descriptionLabel)
+        descriptionLabel.anchor(top: areaLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
         
-        addSubview(discription)
-        discription.anchor(top: discriptionLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8)
+        addSubview(descripe)
+        descripe.anchor(top: descriptionLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8)
         
         addSubview(contactLabel)
         contactLabel.anchor(top: postImageView.bottomAnchor, right: rightAnchor, paddingTop: 8, paddingRight: 20)
@@ -163,6 +165,9 @@ class AdoptionCell: UICollectionViewCell {
         addSubview(emailLabel)
         emailLabel.anchor(top: phoneLabel.bottomAnchor, right: rightAnchor, paddingTop: 8, paddingRight: 20)
         
+        addSubview(timeLabel)
+        timeLabel.anchor(bottom: descripe.topAnchor, right: rightAnchor, paddingBottom: 8, paddingRight: 20)
+        
 
     }
     
@@ -171,4 +176,16 @@ class AdoptionCell: UICollectionViewCell {
     }
     
     //MARK: - Helpers
+    func configure() {
+        guard let viewModel = viewModel else {return}
+        petName.text = viewModel.petname
+        breed.text = viewModel.breed
+        age.text = viewModel.age
+        area.text = viewModel.area
+        postImageView.sd_setImage(with: viewModel.petImageUrl)
+        phoneLabel.text = viewModel.phone
+        emailLabel.text = viewModel.email
+        descripe.text = viewModel.description
+        timeLabel.text = viewModel.timeStampString
+    }
 }
