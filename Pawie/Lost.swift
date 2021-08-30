@@ -1,15 +1,15 @@
 //
-//  Adoption.swift
+//  Lost.swift
 //  Pawie
 //
-//  Created by Yu Ming Lin on 8/26/21.
+//  Created by Yu Ming Lin on 8/30/21.
 //
 
 import Foundation
 import Firebase
 
 
-struct Adoption {
+struct Lost{
     let species: String
     let petName: String
     let breed: String

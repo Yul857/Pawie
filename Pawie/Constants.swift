@@ -18,3 +18,5 @@ let COLLECTION_NOTIFICATIONS = Firestore.firestore().collection("notifications")
 let COLLECTION_CONSULTS = Firestore.firestore().collection("consults")
 
 let COLLECTION_ADOPTIONS = Firestore.firestore().collection("adoptions")
+
+let COLLECTION_LOST = Firestore.firestore().collection("losts")

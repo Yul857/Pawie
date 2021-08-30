@@ -1,14 +1,14 @@
 //
-//  AddAdoptionController.swift
+//  AddLostController.swift
 //  Pawie
 //
-//  Created by Yu Ming Lin on 8/26/21.
+//  Created by Yu Ming Lin on 8/30/21.
 //
 
 import UIKit
 import Firebase
 
-class AddAdoptionController: UIViewController {
+class AddLostController: UIViewController {
  
     
     private var profileImage: UIImage?
@@ -43,7 +43,7 @@ class AddAdoptionController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.addTarget(self, action: #selector(handleAddAdoption), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleAddLost), for: .touchUpInside)
         button.isEnabled = false
         return button
     }()
@@ -80,7 +80,7 @@ class AddAdoptionController: UIViewController {
         present(picker, animated: true, completion: nil)
     }
     
-    @objc func handleAddAdoption(){
+    @objc func handleAddLost(){
         guard let species = speciesTextfield.text else {return}
         guard let ownerName = ownerTextField.text else {return}
         guard let petName = petNameTextField.text else{return}
@@ -93,12 +93,12 @@ class AddAdoptionController: UIViewController {
         guard let petImage = self.profileImage else {return}
         self.showLoader(true)
 
-        let credentials = AdoptionCredentials(species: species, petName: petName, breed: breed, age: age,
+        let credentials = LostCredentials(species: species, petName: petName, breed: breed, age: age,
                                               area: area, description: description, phone: phone, email: email,
                                               ownerName: ownerName, petImage: petImage, time: Timestamp())
-        AdoptionService.uploadAdoption(withCredentials: credentials) { error in
+        LostService.uploadLosts(withCredentials: credentials) { error in
             if let  error = error {
-                print("There is an error uploading adoption post \(error.localizedDescription)")
+                print("There is an error uploading lost post \(error.localizedDescription)")
                 return
             }else{
                 self.showLoader(false)
@@ -151,7 +151,7 @@ class AddAdoptionController: UIViewController {
 }
 //MARK: - UIImagePickerControllerDelegate
 
-extension AddAdoptionController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension AddLostController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else{ return }
         profileImage = selectedImage
@@ -165,4 +165,3 @@ extension AddAdoptionController: UIImagePickerControllerDelegate, UINavigationCo
         
     }
 }
-

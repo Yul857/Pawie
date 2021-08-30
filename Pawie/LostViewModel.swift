@@ -1,64 +1,64 @@
 //
-//  AdoptionViewModel.swift
+//  LostViewModel.swift
 //  Pawie
 //
-//  Created by Yu Ming Lin on 8/26/21.
+//  Created by Yu Ming Lin on 8/30/21.
 //
 
 import UIKit
 import Firebase
 
-struct AdoptionViewModel {
-    var adoption: Adoption
+struct LostViewModel {
+    var lost: Lost
     
     var species: String {
-        return adoption.species
+        return lost.species
     }
     
     var ownerName: String {
-        return adoption.ownerName
+        return lost.ownerName
     }
     
     
     var petname: String {
-        return adoption.petName
+        return lost.petName
     }
     
     var breed: String {
-        return adoption.breed
+        return lost.breed
     }
     
     var age: String {
-        return adoption.age
+        return lost.age
     }
     
     var area: String {
-        return adoption.area
+        return lost.area
     }
     var petImageUrl : URL? {
-        return URL(string: adoption.petImageUrl)
+        return URL(string: lost.petImageUrl)
     }
     
     var description: String {
-        return adoption.description
+        return lost.description
     }
     
     var phone: String {
-        return adoption.phone
+        return lost.phone
     }
     
     var email: String {
-        return adoption.email
+        return lost.email
     }
     var timeStampString: String? {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
         formatter.maximumUnitCount = 1
         formatter.unitsStyle = .full
-        return formatter.string(from: adoption.time.dateValue(), to: Date())
+        return formatter.string(from: lost.time.dateValue(), to: Date())
     }
     
-    init(adoption: Adoption){
-        self.adoption = adoption
+    init(lost: Lost){
+        self.lost = lost
     }
 }

@@ -1,20 +1,27 @@
 //
-//  AdoptionCell.swift
+//  LostCell.swift
 //  Pawie
 //
-//  Created by Yu Ming Lin on 8/26/21.
+//  Created by Yu Ming Lin on 8/28/21.
 //
 
 import UIKit
-import SDWebImage
 
-
-class AdoptionCell: UICollectionViewCell {
+class LostCell: UICollectionViewCell {
     //MARK: - properties
     
-    var viewModel: AdoptionViewModel? {
+    var viewModel: LostViewModel? {
         didSet{configure()}
         }
+    
+    private let lostLabel: UILabel = {
+        let label = UILabel()
+        label.text = "LOST"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.backgroundColor = #colorLiteral(red: 0.227704823, green: 0.2572639287, blue: 0.9191480279, alpha: 1)
+        return label
+    }()
     
     private let postImageView: UIImageView = {
         let iv = UIImageView()
@@ -34,7 +41,6 @@ class AdoptionCell: UICollectionViewCell {
     
     private let speciesNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Dog"
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
@@ -80,7 +86,7 @@ class AdoptionCell: UICollectionViewCell {
     
     private let areaLabel: UILabel = {
         let label = UILabel()
-        label.text = "Area:"
+        label.text = "Last Seen:"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
@@ -116,10 +122,10 @@ class AdoptionCell: UICollectionViewCell {
     
     private let ownerNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lin Yu-Ming"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
+
     
     private let phoneLabel: UILabel = {
         let label = UILabel()
@@ -143,15 +149,17 @@ class AdoptionCell: UICollectionViewCell {
     //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubview(lostLabel)
+        lostLabel.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 40)
         
         addSubview(postImageView)
-        postImageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 250)
+        postImageView.anchor(top: lostLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 250)
         
         addSubview(speciesLabel)
-        speciesLabel.anchor(top: postImageView.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        speciesLabel.anchor(top:postImageView.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
         
         addSubview(speciesNameLabel)
-        speciesNameLabel.anchor(top: postImageView.bottomAnchor, left: speciesLabel.rightAnchor, paddingTop: 8, paddingLeft: 4)
+        speciesNameLabel.anchor(top:postImageView.bottomAnchor, left: speciesLabel.rightAnchor, paddingTop: 8, paddingLeft: 8)
         
         addSubview(petNameLabel)
         petNameLabel.anchor(top: speciesLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)

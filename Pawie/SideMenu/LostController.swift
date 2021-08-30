@@ -1,18 +1,18 @@
 //
-//  AdoptionController.swift
+//  LostController.swift
 //  Pawie
 //
-//  Created by Yu Ming Lin on 8/19/21.
+//  Created by Yu Ming Lin on 8/28/21.
 //
 
 import UIKit
 
-class AdoptionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class LostController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    private let reuseIdentifier = "adoptionCell"
+    private let reuseIdentifier = "lostCell"
     //MARK: - properties
     private let searchController = UISearchController(searchResultsController: nil)
-    private var adoptions = [Adoption]() {
+    private var losts = [Lost]() {
         didSet {
             collectionView.reloadData()
         }
@@ -20,14 +20,14 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
     private var inSearchMode: Bool {
         return searchController.isActive && !searchController.searchBar.text!.isEmpty
     }
-    private var filteredAdoptions = [Adoption]()
+    private var filteredLosts = [Lost]()
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.delegate = self
         cv.dataSource = self
         cv.backgroundColor = .white
-        cv.register(AdoptionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        cv.register(LostCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         return cv
     }()
     
@@ -38,14 +38,14 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.collectionView.reloadData()
-        fetchAdoptions()
+        fetchLosts()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         view.backgroundColor = .white
-        
+        fetchLosts()
         configureSearchController()
         
         
@@ -54,7 +54,7 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
         //set image for button
         button.setImage(UIImage(named: "plus"), for: .normal)
         //add function for button
-        button.addTarget(self, action: #selector(notificationButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(addLostPressed), for: .touchUpInside)
         //set frame
         button.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
         
@@ -65,15 +65,15 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Actions
 
     
-    @objc func notificationButtonPressed() {
-        let nav = AddAdoptionController()
+    @objc func addLostPressed() {
+        let nav = AddLostController()
         self.navigationController?.pushViewController(nav, animated: true)
     }
     
     //MARK: - Helpers
     
     func configure() {
-        navigationItem.title = "ADOPTION"
+        navigationItem.title = "LOST"
         view.addSubview(collectionView)
         collectionView.fillSuperview()
         
@@ -89,34 +89,33 @@ class AdoptionController: UIViewController, UICollectionViewDelegate, UICollecti
         definesPresentationContext = true
     }
     
-    func fetchAdoptions() {
-        AdoptionService.fetchAdoption { adoptions in
-            self.adoptions = adoptions
+    func fetchLosts() {
+        LostService.fetchLosts { losts in
+            self.losts = losts
             self.collectionView.reloadData()
         }
+            
     }
 }
 
 //MARK: - UICollectionViewDataSource
 
-extension AdoptionController {
+extension LostController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return inSearchMode ? filteredAdoptions.count : adoptions.count
+        return inSearchMode ? filteredLosts.count : losts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AdoptionCell
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 2
-        let adoption = inSearchMode ? filteredAdoptions[indexPath.row] : adoptions[indexPath.row]
-        cell.viewModel =  AdoptionViewModel(adoption: adoption)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LostCell
+        let lost = inSearchMode ? filteredLosts[indexPath.row] : losts[indexPath.row]
+        cell.viewModel =  LostViewModel(lost: lost)
         return cell
     }
 }
 
 //MARK: -  UICollectionViewDelegateLayout
 
-extension AdoptionController: UICollectionViewDelegateFlowLayout{
+extension LostController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.frame.width
@@ -130,7 +129,7 @@ extension AdoptionController: UICollectionViewDelegateFlowLayout{
 
 //MARK: -  UISearchBarDelegate
 
-extension AdoptionController: UISearchBarDelegate {
+extension LostController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
         collectionView.isHidden = false
@@ -146,11 +145,10 @@ extension AdoptionController: UISearchBarDelegate {
     }
 }
 
-extension AdoptionController: UISearchResultsUpdating {
+extension LostController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text?.lowercased() else {return}
-        filteredAdoptions = adoptions.filter({$0.area.contains(searchText) || $0.breed.lowercased().contains(searchText) || $0.description.lowercased().contains(searchText) || $0.petName.lowercased().contains(searchText) ||
-            $0.species.lowercased().contains(searchText) || $0.ownerName.lowercased().contains(searchText)})
+        filteredLosts = losts.filter({$0.area.contains(searchText) || $0.breed.lowercased().contains(searchText) || $0.description.lowercased().contains(searchText) || $0.petName.lowercased().contains(searchText)})
         self.collectionView.reloadData()
     }
 }

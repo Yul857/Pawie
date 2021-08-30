@@ -1,14 +1,14 @@
 //
-//  AdoptionService.swift
+//  LostService.swift
 //  Pawie
 //
-//  Created by Yu Ming Lin on 8/26/21.
+//  Created by Yu Ming Lin on 8/30/21.
 //
 
 import Firebase
 import UIKit
 
-struct AdoptionCredentials {
+struct LostCredentials {
     let species: String
     let petName: String
     let breed: String
@@ -22,8 +22,8 @@ struct AdoptionCredentials {
     let time: Timestamp
 }
 
-struct AdoptionService {
-    static func uploadAdoption(withCredentials credentials: AdoptionCredentials, completion: @escaping(Error?)-> Void) {
+struct LostService {
+    static func uploadLosts(withCredentials credentials: LostCredentials, completion: @escaping(Error?)-> Void) {
         ImageUploader.uploadImage(image: credentials.petImage) { imageURL in
             
             let data: [String: Any] = ["petName" : credentials.petName, "breed": credentials.breed,
@@ -33,18 +33,18 @@ struct AdoptionService {
                                        "time": credentials.time, "species": credentials.species,
                                        "ownername": credentials.ownerName]
             
-            COLLECTION_ADOPTIONS.addDocument(data: data, completion: completion)
+            COLLECTION_LOST.addDocument(data: data, completion: completion)
             
         }
     }
     
-    static func fetchAdoption(completion: @escaping([Adoption]) -> Void) {
-        COLLECTION_ADOPTIONS.order(by: "time", descending: true).getDocuments { (snapshot, error) in
+    static func fetchLosts(completion: @escaping([Lost]) -> Void) {
+        COLLECTION_LOST.order(by: "time", descending: true).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot else {return}
             
-            let adoptions = snapshot.documents.map({Adoption(dictionary: $0.data())})
+            let losts = snapshot.documents.map({Lost(dictionary: $0.data())})
             
-            completion(adoptions)
+            completion(losts)
         }
     }
 }

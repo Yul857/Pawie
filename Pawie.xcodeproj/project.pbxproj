@@ -70,6 +70,13 @@
 		FD7FAC6A26D856C20066EAA6 /* AdoptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */; };
 		FD7FAC6D26D86E4B0066EAA6 /* Adoption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */; };
 		FD7FAC7026D896770066EAA6 /* AdoptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */; };
+		FD7FAC7426DB4DDB0066EAA6 /* LostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC7326DB4DDB0066EAA6 /* LostController.swift */; };
+		FD7FAC7726DB4DF10066EAA6 /* FoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC7626DB4DF10066EAA6 /* FoundController.swift */; };
+		FD7FAC7A26DB5AAB0066EAA6 /* LostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC7926DB5AAB0066EAA6 /* LostCell.swift */; };
+		FD7FAC7D26DD73B90066EAA6 /* Lost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC7C26DD73B90066EAA6 /* Lost.swift */; };
+		FD7FAC8426DD74560066EAA6 /* LostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8326DD74560066EAA6 /* LostService.swift */; };
+		FD7FAC8726DD75DB0066EAA6 /* LostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8626DD75DB0066EAA6 /* LostViewModel.swift */; };
+		FD7FAC8A26DD7A930066EAA6 /* AddLostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8926DD7A930066EAA6 /* AddLostController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +147,13 @@
 		FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionService.swift; sourceTree = "<group>"; };
 		FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adoption.swift; sourceTree = "<group>"; };
 		FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionViewModel.swift; sourceTree = "<group>"; };
+		FD7FAC7326DB4DDB0066EAA6 /* LostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostController.swift; sourceTree = "<group>"; };
+		FD7FAC7626DB4DF10066EAA6 /* FoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundController.swift; sourceTree = "<group>"; };
+		FD7FAC7926DB5AAB0066EAA6 /* LostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCell.swift; sourceTree = "<group>"; };
+		FD7FAC7C26DD73B90066EAA6 /* Lost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lost.swift; sourceTree = "<group>"; };
+		FD7FAC8326DD74560066EAA6 /* LostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostService.swift; sourceTree = "<group>"; };
+		FD7FAC8626DD75DB0066EAA6 /* LostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostViewModel.swift; sourceTree = "<group>"; };
+		FD7FAC8926DD7A930066EAA6 /* AddLostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +233,7 @@
 				FD6CAFFE26C3E1D2008FF97A /* Notification.swift */,
 				FD6CB15926D74F7A008FF97A /* Message.swift */,
 				FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */,
+				FD7FAC7C26DD73B90066EAA6 /* Lost.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 				FD6CAFEC26C3338D008FF97A /* CommentInputAccessoryView.swift */,
 				FD6CAFFB26C3C826008FF97A /* NotificationCell.swift */,
 				FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */,
+				FD7FAC7926DB5AAB0066EAA6 /* LostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 				FD6CAFF526C35CBA008FF97A /* CommentViewModel.swift */,
 				FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */,
 				FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */,
+				FD7FAC8626DD75DB0066EAA6 /* LostViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -257,15 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6CAF1426BDEB10008FF97A /* Authentication */,
-				FD6CAEFE26BC737E008FF97A /* MainTabController.swift */,
-				FD6CAF0A26BC7DBC008FF97A /* FeedController.swift */,
-				FD6CAF0426BC7D8A008FF97A /* ImageSelectorController.swift */,
-				FD6CAF0726BC7DA2008FF97A /* ShopController.swift */,
-				FD6CAF0D26BC7DD3008FF97A /* ProfileController.swift */,
-				FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */,
-				FD6CAFB526C142BA008FF97A /* UploadPostController.swift */,
-				FD6CAFE526C326AB008FF97A /* CommentController.swift */,
-				FD6CAFF826C3C47A008FF97A /* NotificationController.swift */,
+				FD7FAC8C26DD84890066EAA6 /* Main */,
 				FD6CB0BD26CEDFCE008FF97A /* SideMenu */,
 			);
 			name = Controller;
@@ -282,6 +291,7 @@
 				FD6CB00126C3E91A008FF97A /* NotificationService.swift */,
 				FD6CB12E26D735F8008FF97A /* ConsultService.swift */,
 				FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */,
+				FD7FAC8326DD74560066EAA6 /* LostService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -331,12 +341,31 @@
 				FD6CB0BF26CF5402008FF97A /* AskVetController.swift */,
 				FD6CB12B26D6D99C008FF97A /* VetChatViewController.swift */,
 				FD6CB0C226CF543E008FF97A /* LostNFoundController.swift */,
+				FD7FAC7326DB4DDB0066EAA6 /* LostController.swift */,
+				FD7FAC8926DD7A930066EAA6 /* AddLostController.swift */,
+				FD7FAC7626DB4DF10066EAA6 /* FoundController.swift */,
 				FD6CB0CC26CF5670008FF97A /* GiftController.swift */,
 				FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */,
 				FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */,
 				FD7FAC6626D8453D0066EAA6 /* AddAdoptionController.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		FD7FAC8C26DD84890066EAA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FD6CAEFE26BC737E008FF97A /* MainTabController.swift */,
+				FD6CAF0A26BC7DBC008FF97A /* FeedController.swift */,
+				FD6CAF0426BC7D8A008FF97A /* ImageSelectorController.swift */,
+				FD6CAF0726BC7DA2008FF97A /* ShopController.swift */,
+				FD6CAF0D26BC7DD3008FF97A /* ProfileController.swift */,
+				FD6CAF8D26C0C65F008FF97A /* SearchTappedController.swift */,
+				FD6CAFB526C142BA008FF97A /* UploadPostController.swift */,
+				FD6CAFE526C326AB008FF97A /* CommentController.swift */,
+				FD6CAFF826C3C47A008FF97A /* NotificationController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,8 +487,11 @@
 				FD6CAFE326C21D35008FF97A /* PostViewModel.swift in Sources */,
 				FD6CAF0526BC7D8A008FF97A /* ImageSelectorController.swift in Sources */,
 				FD6CB0D626CF5AB4008FF97A /* ServiceController.swift in Sources */,
+				FD7FAC7726DB4DF10066EAA6 /* FoundController.swift in Sources */,
 				FD6CAEFC26BC6C74008FF97A /* Extension.swift in Sources */,
+				FD7FAC8426DD74560066EAA6 /* LostService.swift in Sources */,
 				FD6CAFFC26C3C826008FF97A /* NotificationCell.swift in Sources */,
+				FD7FAC7D26DD73B90066EAA6 /* Lost.swift in Sources */,
 				FD6CAEF826BC6AD5008FF97A /* CustomTextField.swift in Sources */,
 				FD6CAF1626BDEB2F008FF97A /* LoginController.swift in Sources */,
 				FD6CB12C26D6D99C008FF97A /* VetChatViewController.swift in Sources */,
@@ -476,9 +508,12 @@
 				FD6CAFF026C35281008FF97A /* CommentService.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
+				FD7FAC7426DB4DDB0066EAA6 /* LostController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
 				FD7FAC6D26D86E4B0066EAA6 /* Adoption.swift in Sources */,
+				FD7FAC8726DD75DB0066EAA6 /* LostViewModel.swift in Sources */,
 				FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */,
+				FD7FAC7A26DB5AAB0066EAA6 /* LostCell.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
 				FD7FAC6426D83AFE0066EAA6 /* AdoptionCell.swift in Sources */,
 				FD6CB04026C8F1B4008FF97A /* ShoppingHeader.swift in Sources */,
@@ -505,6 +540,7 @@
 				FD6CAFF926C3C47B008FF97A /* NotificationController.swift in Sources */,
 				FD6CAF6126BF81C0008FF97A /* ProfileCell.swift in Sources */,
 				FD6CAF0826BC7DA2008FF97A /* ShopController.swift in Sources */,
+				FD7FAC8A26DD7A930066EAA6 /* AddLostController.swift in Sources */,
 				FD6CB0CD26CF5670008FF97A /* GiftController.swift in Sources */,
 				FD7FAC7026D896770066EAA6 /* AdoptionViewModel.swift in Sources */,
 				FD6CB0D326CF56B4008FF97A /* AdoptionController.swift in Sources */,
