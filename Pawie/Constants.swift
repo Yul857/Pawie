@@ -20,3 +20,7 @@ let COLLECTION_CONSULTS = Firestore.firestore().collection("consults")
 let COLLECTION_ADOPTIONS = Firestore.firestore().collection("adoptions")
 
 let COLLECTION_LOST = Firestore.firestore().collection("losts")
+
+let COLLECTION_FOUND = Firestore.firestore().collection("founds")
+
+let COLLECTION_POINT = Firestore.firestore().collection("points")

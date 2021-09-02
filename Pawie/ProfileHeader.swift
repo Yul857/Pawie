@@ -30,10 +30,16 @@ class ProfileHeader: UICollectionReusableView {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize:16)
+        label.font = UIFont.boldSystemFont(ofSize:24)
         label.numberOfLines = 0
         
         return label
+    }()
+    
+    private let petImage: UIImageView = {
+        let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "pet-account")
+        return iv
     }()
     
     private let ownerLabel: UILabel = {
@@ -41,6 +47,12 @@ class ProfileHeader: UICollectionReusableView {
         label.font = UIFont.boldSystemFont(ofSize: 14)
         
         return label
+    }()
+    
+    private let accountImage: UIImageView = {
+        let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "account")
+        return iv
     }()
     
     private let bioLabel: UILabel = {
@@ -89,12 +101,12 @@ class ProfileHeader: UICollectionReusableView {
         return label
     }()
     
-    let pokeButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "send2"), for: .normal)
-        button.contentMode = .scaleAspectFit
-        return button
-    }()
+//    let pokeButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.setImage(#imageLiteral(resourceName: "send2"), for: .normal)
+//        button.contentMode = .scaleAspectFit
+//        return button
+//    }()
     
 //    let listButton: UIButton = {
 //        let button = UIButton(type: .system)
@@ -123,12 +135,18 @@ class ProfileHeader: UICollectionReusableView {
         profileImageView.setDimensions(height: 100, width: 100)
         profileImageView.layer.cornerRadius = 100/2
         
-        addSubview(nameLabel)
-        nameLabel.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 12, width: 150)
+        addSubview(petImage)
+        petImage.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 12)
         
+        addSubview(nameLabel)
+        nameLabel.anchor(top: profileImageView.bottomAnchor, left: petImage.rightAnchor, paddingTop: 12, paddingLeft: 4, width: 150)
+        
+        
+        addSubview(accountImage)
+        accountImage.anchor(top: petImage.bottomAnchor, left: leftAnchor, paddingTop: 6, paddingLeft: 12)
         
         addSubview(ownerLabel)
-        ownerLabel.anchor(top: nameLabel.bottomAnchor, left: leftAnchor, paddingTop: 6, paddingLeft: 12, width: 150)
+        ownerLabel.anchor(top: petImage.bottomAnchor, left: accountImage.rightAnchor, paddingTop: 6, paddingLeft: 4, width: 150)
         
         addSubview(bioLabel)
         bioLabel.anchor(top: ownerLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 6, paddingLeft: 12, paddingRight: 12)
@@ -147,8 +165,8 @@ class ProfileHeader: UICollectionReusableView {
         editProfileFollowButton.anchor(top: stack.bottomAnchor ,left: ownerLabel.rightAnchor, paddingTop: 30,
                                        paddingLeft: 6, width: 150, height: 40)
         
-        addSubview(pokeButton)
-        pokeButton.anchor(top: stack.bottomAnchor, left: editProfileFollowButton.rightAnchor, right: rightAnchor, paddingTop: 30, paddingLeft: 5, paddingRight: 5, height: 40)
+//        addSubview(pokeButton)
+//        pokeButton.anchor(top: stack.bottomAnchor, left: editProfileFollowButton.rightAnchor, right: rightAnchor, paddingTop: 30, paddingLeft: 5, paddingRight: 5, height: 40)
         
         let topDivider = UIView()
         topDivider.backgroundColor = .lightGray

@@ -60,7 +60,7 @@ class FeedCell: UICollectionViewCell{
     
     lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "pawLike"), for: .normal)
         button.tintColor = .black
         button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         return button
@@ -74,12 +74,12 @@ class FeedCell: UICollectionViewCell{
         return button
     }()
     
-    private lazy var shareButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "send2"), for: .normal)
-        button.tintColor = .black
-        return button
-    }()
+//    private lazy var shareButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.setImage(#imageLiteral(resourceName: "send2"), for: .normal)
+//        button.tintColor = .black
+//        return button
+//    }()
     
     private let likeLabel: UILabel = {
         let label = UILabel()
@@ -142,8 +142,8 @@ class FeedCell: UICollectionViewCell{
         addSubview(commentLabel)
         commentLabel.anchor(top: postImageView.bottomAnchor, left: commentButton.rightAnchor, paddingLeft: 8, height: 50)
 
-        addSubview(shareButton)
-        shareButton.anchor(top: postImageView.bottomAnchor, right: rightAnchor, paddingRight: 20, height: 50)
+//        addSubview(shareButton)
+//        shareButton.anchor(top: postImageView.bottomAnchor, right: rightAnchor, paddingRight: 20, height: 50)
        
         addSubview(captionLabel)
         captionLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingLeft: 8, paddingRight: 8)

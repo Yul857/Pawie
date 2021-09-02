@@ -73,7 +73,6 @@ class LostController: UIViewController, UICollectionViewDelegate, UICollectionVi
     //MARK: - Helpers
     
     func configure() {
-        navigationItem.title = "LOST"
         view.addSubview(collectionView)
         collectionView.fillSuperview()
         
@@ -148,7 +147,9 @@ extension LostController: UISearchBarDelegate {
 extension LostController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text?.lowercased() else {return}
-        filteredLosts = losts.filter({$0.area.contains(searchText) || $0.breed.lowercased().contains(searchText) || $0.description.lowercased().contains(searchText) || $0.petName.lowercased().contains(searchText)})
+        filteredLosts = losts.filter({$0.area.contains(searchText) || $0.breed.lowercased().contains(searchText) || $0.description.lowercased().contains(searchText) || $0.petName.lowercased().contains(searchText) ||
+            $0.species.lowercased().contains(searchText)
+        })
         self.collectionView.reloadData()
     }
 }

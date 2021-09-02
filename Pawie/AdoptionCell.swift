@@ -116,19 +116,20 @@ class AdoptionCell: UICollectionViewCell {
     
     private let ownerNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lin Yu-Ming"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
     private let phoneLabel: UILabel = {
         let label = UILabel()
+        label.text = "phone Unkown"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
+        label.text = "Email Unknown"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()

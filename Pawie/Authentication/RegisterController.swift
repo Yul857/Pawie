@@ -29,7 +29,7 @@ class RegisterController: UIViewController {
     }()
     
     private let passwordTextfield: CustomTextField = {
-        let tf = CustomTextField(placeholder: "Password")
+        let tf = CustomTextField(placeholder: "Password(must be at least 6 characters)")
         tf.isSecureTextEntry = true
         
         return tf

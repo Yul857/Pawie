@@ -77,6 +77,14 @@
 		FD7FAC8426DD74560066EAA6 /* LostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8326DD74560066EAA6 /* LostService.swift */; };
 		FD7FAC8726DD75DB0066EAA6 /* LostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8626DD75DB0066EAA6 /* LostViewModel.swift */; };
 		FD7FAC8A26DD7A930066EAA6 /* AddLostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8926DD7A930066EAA6 /* AddLostController.swift */; };
+		FD7FAC8F26DD8EED0066EAA6 /* AddFoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC8E26DD8EED0066EAA6 /* AddFoundController.swift */; };
+		FD7FAC9226DD8F0F0066EAA6 /* FoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC9126DD8F0F0066EAA6 /* FoundCell.swift */; };
+		FD7FAC9526DD97FE0066EAA6 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC9426DD97FE0066EAA6 /* Found.swift */; };
+		FD7FAC9826DD98680066EAA6 /* FoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC9726DD98680066EAA6 /* FoundViewModel.swift */; };
+		FD7FAC9B26DD99530066EAA6 /* FoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC9A26DD99530066EAA6 /* FoundService.swift */; };
+		FD7FAC9E26E003180066EAA6 /* PointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FAC9D26E003180066EAA6 /* PointService.swift */; };
+		FD7FACA126E00F660066EAA6 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FACA026E00F660066EAA6 /* Point.swift */; };
+		FD7FACA426E043570066EAA6 /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FACA326E043570066EAA6 /* InformationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +162,14 @@
 		FD7FAC8326DD74560066EAA6 /* LostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostService.swift; sourceTree = "<group>"; };
 		FD7FAC8626DD75DB0066EAA6 /* LostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostViewModel.swift; sourceTree = "<group>"; };
 		FD7FAC8926DD7A930066EAA6 /* AddLostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLostController.swift; sourceTree = "<group>"; };
+		FD7FAC8E26DD8EED0066EAA6 /* AddFoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoundController.swift; sourceTree = "<group>"; };
+		FD7FAC9126DD8F0F0066EAA6 /* FoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundCell.swift; sourceTree = "<group>"; };
+		FD7FAC9426DD97FE0066EAA6 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
+		FD7FAC9726DD98680066EAA6 /* FoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundViewModel.swift; sourceTree = "<group>"; };
+		FD7FAC9A26DD99530066EAA6 /* FoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundService.swift; sourceTree = "<group>"; };
+		FD7FAC9D26E003180066EAA6 /* PointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointService.swift; sourceTree = "<group>"; };
+		FD7FACA026E00F660066EAA6 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		FD7FACA326E043570066EAA6 /* InformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +250,8 @@
 				FD6CB15926D74F7A008FF97A /* Message.swift */,
 				FD7FAC6C26D86E4B0066EAA6 /* Adoption.swift */,
 				FD7FAC7C26DD73B90066EAA6 /* Lost.swift */,
+				FD7FAC9426DD97FE0066EAA6 /* Found.swift */,
+				FD7FACA026E00F660066EAA6 /* Point.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 				FD6CAFFB26C3C826008FF97A /* NotificationCell.swift */,
 				FD7FAC6326D83AFE0066EAA6 /* AdoptionCell.swift */,
 				FD7FAC7926DB5AAB0066EAA6 /* LostCell.swift */,
+				FD7FAC9126DD8F0F0066EAA6 /* FoundCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -266,6 +285,7 @@
 				FD6CB00426C3F781008FF97A /* NotificationViewModel.swift */,
 				FD7FAC6F26D896770066EAA6 /* AdoptionViewModel.swift */,
 				FD7FAC8626DD75DB0066EAA6 /* LostViewModel.swift */,
+				FD7FAC9726DD98680066EAA6 /* FoundViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -292,6 +312,8 @@
 				FD6CB12E26D735F8008FF97A /* ConsultService.swift */,
 				FD7FAC6926D856C20066EAA6 /* AdoptionService.swift */,
 				FD7FAC8326DD74560066EAA6 /* LostService.swift */,
+				FD7FAC9A26DD99530066EAA6 /* FoundService.swift */,
+				FD7FAC9D26E003180066EAA6 /* PointService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -344,6 +366,7 @@
 				FD7FAC7326DB4DDB0066EAA6 /* LostController.swift */,
 				FD7FAC8926DD7A930066EAA6 /* AddLostController.swift */,
 				FD7FAC7626DB4DF10066EAA6 /* FoundController.swift */,
+				FD7FAC8E26DD8EED0066EAA6 /* AddFoundController.swift */,
 				FD6CB0CC26CF5670008FF97A /* GiftController.swift */,
 				FD6CB0CF26CF56A0008FF97A /* TryLuckController.swift */,
 				FD6CB0D226CF56B4008FF97A /* AdoptionController.swift */,
@@ -364,6 +387,7 @@
 				FD6CAFB526C142BA008FF97A /* UploadPostController.swift */,
 				FD6CAFE526C326AB008FF97A /* CommentController.swift */,
 				FD6CAFF826C3C47A008FF97A /* NotificationController.swift */,
+				FD7FACA326E043570066EAA6 /* InformationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -483,17 +507,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7FAC8F26DD8EED0066EAA6 /* AddFoundController.swift in Sources */,
+				FD7FAC9226DD8F0F0066EAA6 /* FoundCell.swift in Sources */,
 				FD6CAFED26C3338D008FF97A /* CommentInputAccessoryView.swift in Sources */,
 				FD6CAFE326C21D35008FF97A /* PostViewModel.swift in Sources */,
 				FD6CAF0526BC7D8A008FF97A /* ImageSelectorController.swift in Sources */,
 				FD6CB0D626CF5AB4008FF97A /* ServiceController.swift in Sources */,
 				FD7FAC7726DB4DF10066EAA6 /* FoundController.swift in Sources */,
 				FD6CAEFC26BC6C74008FF97A /* Extension.swift in Sources */,
+				FD7FAC9E26E003180066EAA6 /* PointService.swift in Sources */,
 				FD7FAC8426DD74560066EAA6 /* LostService.swift in Sources */,
 				FD6CAFFC26C3C826008FF97A /* NotificationCell.swift in Sources */,
 				FD7FAC7D26DD73B90066EAA6 /* Lost.swift in Sources */,
 				FD6CAEF826BC6AD5008FF97A /* CustomTextField.swift in Sources */,
 				FD6CAF1626BDEB2F008FF97A /* LoginController.swift in Sources */,
+				FD7FAC9826DD98680066EAA6 /* FoundViewModel.swift in Sources */,
 				FD6CB12C26D6D99C008FF97A /* VetChatViewController.swift in Sources */,
 				FD6CAEFF26BC737E008FF97A /* MainTabController.swift in Sources */,
 				FD6CAFF326C35810008FF97A /* Comment.swift in Sources */,
@@ -508,13 +536,16 @@
 				FD6CAFF026C35281008FF97A /* CommentService.swift in Sources */,
 				FD6CAF1226BDB658008FF97A /* FeedCell.swift in Sources */,
 				FD6CB00826C4A715008FF97A /* ResetPasswordController.swift in Sources */,
+				FD7FACA426E043570066EAA6 /* InformationController.swift in Sources */,
 				FD7FAC7426DB4DDB0066EAA6 /* LostController.swift in Sources */,
 				FD6CB00526C3F781008FF97A /* NotificationViewModel.swift in Sources */,
 				FD7FAC6D26D86E4B0066EAA6 /* Adoption.swift in Sources */,
+				FD7FACA126E00F660066EAA6 /* Point.swift in Sources */,
 				FD7FAC8726DD75DB0066EAA6 /* LostViewModel.swift in Sources */,
 				FD6CB15A26D74F7A008FF97A /* Message.swift in Sources */,
 				FD7FAC7A26DB5AAB0066EAA6 /* LostCell.swift in Sources */,
 				FD6CAF6426BF81D0008FF97A /* ProfileHeader.swift in Sources */,
+				FD7FAC9526DD97FE0066EAA6 /* Found.swift in Sources */,
 				FD7FAC6426D83AFE0066EAA6 /* AdoptionCell.swift in Sources */,
 				FD6CB04026C8F1B4008FF97A /* ShoppingHeader.swift in Sources */,
 				FD6CAFE926C329DA008FF97A /* CommentCell.swift in Sources */,
@@ -547,6 +578,7 @@
 				FD6CAFFF26C3E1D2008FF97A /* Notification.swift in Sources */,
 				FD6CAEDD26BC681D008FF97A /* SceneDelegate.swift in Sources */,
 				FD6CAF5E26BEFB8D008FF97A /* Constants.swift in Sources */,
+				FD7FAC9B26DD99530066EAA6 /* FoundService.swift in Sources */,
 				FD6CAF6926C093E5008FF97A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

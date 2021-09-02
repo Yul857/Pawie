@@ -21,7 +21,7 @@ class AddAdoptionController: UIViewController {
         return button
     }()
     private let ownerTextField: CustomTextField = CustomTextField(placeholder: "Enter your name...")
-    private let speciesTextfield: CustomTextField = CustomTextField(placeholder: "Pet Catogory(Dogs, cats, hamster...etc)")
+    private let speciesTextfield: CustomTextField = CustomTextField(placeholder: "Pet Catogory(Dog, cat, hamster...etc)")
     private let petNameTextField: CustomTextField = CustomTextField(placeholder: "Pet Name")
     
     private let breedTextField: CustomTextField = CustomTextField(placeholder: "breed")

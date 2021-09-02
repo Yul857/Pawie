@@ -17,7 +17,7 @@ class LoginController: UIViewController {
     weak var delegate: AuthenticationDelegate?
     
     private let iconImage: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
+        let iv = UIImageView(image: #imageLiteral(resourceName: "Pawie-sign"))
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -124,7 +124,7 @@ class LoginController: UIViewController {
         
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
-        iconImage.setDimensions(height: 80, width: 120)
+        iconImage.setDimensions(height: 120, width: 180)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextfield, loginButton, forgetPasswordtButton])

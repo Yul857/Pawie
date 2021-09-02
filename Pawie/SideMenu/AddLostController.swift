@@ -21,14 +21,14 @@ class AddLostController: UIViewController {
         return button
     }()
     private let ownerTextField: CustomTextField = CustomTextField(placeholder: "Enter your name...")
-    private let speciesTextfield: CustomTextField = CustomTextField(placeholder: "Pet Catogory(Dogs, cats, hamster...etc)")
+    private let speciesTextfield: CustomTextField = CustomTextField(placeholder: "Pet Catogory(Dog, cat, hamster...etc)")
     private let petNameTextField: CustomTextField = CustomTextField(placeholder: "Pet Name")
     
     private let breedTextField: CustomTextField = CustomTextField(placeholder: "breed")
     
     private let ageTextField: CustomTextField = CustomTextField(placeholder: "age of the pet")
     
-    private let areaTextField: CustomTextField = CustomTextField(placeholder: "ZIP code")
+    private let areaTextField: CustomTextField = CustomTextField(placeholder: "Last seen(ZIP code)")
     
     private let descriptionTextField: CustomTextField = CustomTextField(placeholder: "Please describe the pet")
     

@@ -35,6 +35,16 @@ class ProfileController: UICollectionViewController {
         fetchUserStats()
         fetchPosts()
         
+        let logOutButton = UIBarButtonItem(image: UIImage(named: "logout"),
+                                                           style: .plain, target: self, action: #selector(handleLogOut))
+        
+        self.navigationItem.rightBarButtonItem = logOutButton
+        
+        let informationButton = UIBarButtonItem(image: UIImage(named: "information"),
+                                                style: .plain, target: self, action: #selector(showInformation))
+        
+        self.navigationItem.leftBarButtonItem = informationButton
+        
         
     }
     
@@ -60,6 +70,24 @@ class ProfileController: UICollectionViewController {
             print("DEBUG: Posts are \(posts)")
             self.collectionView.reloadData()
         }
+    }
+    @objc func handleLogOut() {
+        do{
+            let controller = LoginController()
+            controller.delegate = self.tabBarController as? MainTabController
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: false, completion: nil)
+            try Auth.auth().signOut()
+        }catch{
+            print("failed to logged out , \(error)")
+        }
+        
+    }
+    
+    @objc func showInformation() {
+        let nav = InformationController()
+        navigationController?.pushViewController(nav, animated: true)
     }
 
     

@@ -129,12 +129,14 @@ class LostCell: UICollectionViewCell {
     
     private let phoneLabel: UILabel = {
         let label = UILabel()
+        label.text = "phone Unkown"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
+        label.text = "Email Unkown"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()

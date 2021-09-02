@@ -41,12 +41,17 @@ class ShopController: UICollectionViewController{
     //MARK: - Actions
     
     @objc func checkoutTapped() {
-        print("DEBUG: Lets fo check out")
+        print("DEBUG: Lets go check out")
     }
 
     //MARK: - Helpers
 
     func configureCollectionView() {
+        let alert = UIAlertController(title: "Sorry", message: "All of the items sold out", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
         collectionView.register(ShoppingCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.register(ShoppingHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -67,12 +72,13 @@ class ShopController: UICollectionViewController{
 
     //MARK: - collectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ShoppingCell
-//        cell.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
 
         return cell
     }

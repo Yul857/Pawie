@@ -54,16 +54,16 @@ class MainTabController: UITabBarController {
         self.delegate = self
         
         let layout = UICollectionViewFlowLayout()
-        let feed = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: layout))
+        let feed = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "home-icon"), selectedImage: #imageLiteral(resourceName: "home-icon-tapped"), rootViewController: FeedController(collectionViewLayout: layout))
                                                     
-        let search = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchTappedController())
+        let search = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "search-icon"), selectedImage: #imageLiteral(resourceName: "search-icon-Tapped"), rootViewController: SearchTappedController())
         
-        let image = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "plus_unselected"), selectedImage: #imageLiteral(resourceName: "plus_unselected"), rootViewController: ImageController())
+        let image = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "add-post"), selectedImage: #imageLiteral(resourceName: "add-post"), rootViewController: ImageController())
         
-        let shop = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "shopIcon"), selectedImage: #imageLiteral(resourceName: "shopIconTapped"), rootViewController: ShopController(collectionViewLayout: layout))
+        let shop = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "shop-icon"), selectedImage: #imageLiteral(resourceName: "shop-icon-tapped"), rootViewController: ShopController(collectionViewLayout: layout))
         
         let profileController = ProfileController(user: user)
-        let profile = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: profileController)
+        let profile = templateNavigationViewController(unseletedImage: #imageLiteral(resourceName: "dog-paw"), selectedImage: #imageLiteral(resourceName: "dog-paw-pressed"), rootViewController: profileController)
                                                     
         
         viewControllers = [feed, search, image, shop, profile]

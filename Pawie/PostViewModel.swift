@@ -26,7 +26,7 @@ struct PostViewModel {
     }
 
     var likeButtonImage: UIImage? {
-        let imageName = post.didLike ? "like_selected" : "like_unselected"
+        let imageName = post.didLike ? "pawLikeTapped" : "pawLike"
         return UIImage(named: imageName)
     }
     var timeStampString: String? {

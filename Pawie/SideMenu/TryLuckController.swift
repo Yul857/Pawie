@@ -157,17 +157,28 @@ class TryLuckController: UIViewController {
     
     
     func checkIfHitJackpot(){
-        
-        if dailyChances >= 0 {
+        print(dailyChances)
+        dailyChances -= 1
+        if dailyChances > 0 {
             if randomOne == randomTwo && randomTwo == randomThree {
-                print("Viola! YOU'VE HIT THE JACKPOT")
+                let alert = UIAlertController(title: "Viola!", message: "Today will be your lucky day", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Great", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
             }else if randomOne != randomTwo && randomTwo != randomThree && randomThree != randomOne {
-                print("GOOD LUCK NEXT TIME")
+                let alert = UIAlertController(title: "Sorry!", message: "Good luck next time", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
             }else{
-                print("YOU'VE WON A SMALL PRIZE")
+                let alert = UIAlertController(title: "Congratulations", message: "Today is going to be a good day", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Great", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
             }
-            dailyChances -= 1
-            print(dailyChances)
         }else{
             rollButton.isEnabled = false
             rollButton.alpha = 0.5
