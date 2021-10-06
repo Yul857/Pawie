@@ -44,7 +44,7 @@ class GiftController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         fetchPoints()
-        let savedDate =  defaults.value(forKey: "LastRun") as! Date
+        let savedDate =  defaults.value(forKey: "LastRun")  as? Date ?? Date()
         if savedDate.timeIntervalSinceNow < -86400 {
             defaults.set(false, forKey: "points")
         }
@@ -79,10 +79,10 @@ class GiftController: UIViewController{
         pointStack.axis = .horizontal
         pointStack.spacing = 6
         view.addSubview(pointStack)
-        pointStack.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 50)
+        pointStack.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 80)
         
         view.addSubview(giftButton)
-        giftButton.centerX(inView: view, topAnchor: pointStack.bottomAnchor, paddingTop: 30)
+        giftButton.centerX(inView: view, topAnchor: pointStack.bottomAnchor, paddingTop: 150)
     }
     
     @objc func giftTapped() {

@@ -52,7 +52,7 @@ extension AskVetController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Consult with DR BU"
+        cell.textLabel?.text = "Consult with DR Lee"
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -63,7 +63,7 @@ extension AskVetController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = VetChatViewController()
-        vc.title = "ASK DR. BU"
+        vc.title = "ASK DR. Lee"
         navigationController?.pushViewController(vc, animated: true)
     }
 }
